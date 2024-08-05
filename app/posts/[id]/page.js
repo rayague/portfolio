@@ -177,6 +177,9 @@ export default function Page() {
           <Link href="/contact" className="hover:text-gray-50">
             Contact
           </Link>
+          <Link href="/blog" className="hover:text-gray-50">
+            Blog
+          </Link>
         </nav>
       </div>
       <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
