@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { collection, onSnapshot } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCoffee,
@@ -65,7 +63,7 @@ export default function Page() {
       date: "Aug. 2024",
       content:
         "C’est fait de telle sorte que chaque infime pensée, chaque acte que tu poseras influencera ta destinée. Bien avant même la genèse, ceux qui ont existé avant nous, ceux d’aujourd’hui et ceux qui arriveront, étions tous là, auprès de ...",
-      image: "/post4.jpg"
+      image: "/post10.jpg"
     },
     {
       id: 5,
@@ -93,34 +91,43 @@ export default function Page() {
       content:
         "Parfois, il suffit qu’une petite situation se présente pour que nous commencions à nous poser plusieurs questions. Nous nous demandons pourquoi la vie est ainsi, pourquoi nous devons subir à la place des autres, pourquoi nous sommes nés si nous ne pouvons pas être ...",
       image: "/post7.jpg"
+    },
+    {
+      id: 8,
+      title: "Post 2",
+      author: "Internet",
+      date: "Aug. 2024",
+      content:
+        "L'homme a été créé pour exercer son autorité. Il n'aime pas faire le chef, il est CHEF. Il n'aime pas commander, mais il est un commandant. Il n'y a jamais eu de petit mari et il n'y en aura jamais. Peu importe si la femme est plus ...",
+      image: "/couple4.jpg"
+    },
+    {
+      id: 9,
+      title: "Post 1",
+      author: "Internet",
+      date: "Aug. 2024",
+      content:
+        "Depuis des siècles, les femmes ont été manipulées pour croire qu'elles sont « hystériques », « émotives », « folles » et « dépendantes » pour avoir des besoins ...",
+      image: "/couple8.jpg"
+    },
+    {
+      id: 10,
+      title: "Post 2",
+      author: "Internet",
+      date: "Aug. 2024",
+      content:
+        "Souvent, lorsque nous parlons des relations toxiques que les femmes subissent, nous nous concentrons uniquement sur les hommes malsains qui agissent agressivement envers elles, ce qui est tout à fait justifié. Mais nous ...",
+      image: "/friend10.jpg"
+    },
+    {
+      id: 11,
+      title: "Post 2",
+      author: "Internet",
+      date: "Aug. 2024",
+      content:
+        "SInternet est en émoi depuis que The Times a couvert plus en profondeur l'histoire de Ballerina Farm, une histoire initialement présentée dans The New York Times, à propos d'un couple influent très populaire, comprenant une ...",
+      image: "/couple6.jpg"
     }
-    // {
-    //   id: 8,
-    //   title: "Post 2",
-    //   author: "Ray Ague",
-    //   date: "Jul.12 - 2024",
-    //   content:
-    //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi adipisci illum vel tempora pariatur? ...",
-    //   image: "/programming1.jpg"
-    // },
-    // {
-    //   id: 9,
-    //   title: "Post 1",
-    //   author: "Ray Ague",
-    //   date: "Jul.12 - 2024",
-    //   content:
-    //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi adipisci illum vel tempora pariatur? ...",
-    //   image: "/programming1.jpg"
-    // },
-    // {
-    //   id: 10,
-    //   title: "Post 2",
-    //   author: "Ray Ague",
-    //   date: "Jul.12 - 2024",
-    //   content:
-    //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi adipisci illum vel tempora pariatur? ...",
-    //   image: "/programming1.jpg"
-    // }
     // Ajoute d'autres posts ici
   ];
 
@@ -153,12 +160,6 @@ export default function Page() {
             experiences that inspire growth and creativity. Join me as we
             explore ideas, reflect on challenges, and celebrate the journey of
             learning together.{" "}
-            {/* <Link
-              href="/form"
-              className="text-sky-400/90 underline underline-offset-3"
-            >
-              Click here to post
-            </Link> */}
           </p>
         </div>
 
