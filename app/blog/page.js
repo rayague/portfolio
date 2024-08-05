@@ -29,23 +29,100 @@ export default function Page() {
   const handleBack = () => {
     router.back();
   };
-  const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const unsubscribe = onSnapshot(
-      collection(db, "formResponses"),
-      (snapshot) => {
-        const postsData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setPosts(postsData);
-      }
-    );
-
-    // Clean up the subscription on unmount
-    return () => unsubscribe();
-  }, []);
+  const posts = [
+    {
+      id: 1,
+      title: "Post 1",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "Nous qui sommes des personnes tout à fait normales, nous n’avons généralement pas eu une vie comblée, une vie désirée. Dans la plupart des cas, notre vie est une succession d’obstacles plus ou moins à notre portée, que....",
+      image: "/post1.jpg"
+    },
+    {
+      id: 2,
+      title: "Post 2",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "L’Homme, qu’est-il en réalité ? Il n’est point rare d’entendre dire que “l’Homme est un éternel insatisfait” ou “l’Homme est un loup pour l’Homme”, et j’en passe… Toutes ces affirmations sont vraies, mais la vraie question qu’il faut se poser est celle-ci : “Est-ce qu’on peut  ...",
+      image: "/post2.jpg"
+    },
+    {
+      id: 3,
+      title: "Post 1",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "L’amour est ce sentiment profond qu’on éprouve pour une personne et non pour une chose, car pour moi, on ne tombe pas amoureux d’une chose. Je ne définirai peut-être pas l’amour de la même manière que les autres, car...",
+      image: "/post3.jpg"
+    },
+    {
+      id: 4,
+      title: "Post 2",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "C’est fait de telle sorte que chaque infime pensée, chaque acte que tu poseras influencera ta destinée. Bien avant même la genèse, ceux qui ont existé avant nous, ceux d’aujourd’hui et ceux qui arriveront, étions tous là, auprès de ...",
+      image: "/post4.jpg"
+    },
+    {
+      id: 5,
+      title: "Post 1",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "Dans la vie, il faut que tu connaisses ta position, que tu suives le tunnel qui te mènera à la réussite, à ton succès, à ton bonheur. Thanos disait dans le film Marvel Endgame : « S’il existe des gens qui s’attachent toujours à leur passé, c’est qu’il ...",
+      image: "/post5.jpg"
+    },
+    {
+      id: 6,
+      title: "Post 2",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "Qui est Dieu ? Dieu n’est pas une personne, ni un esprit ou quoi que ce soit. Dans notre tête, nous craignons tous quelqu’un ou quelque chose ; nous savons qu’il y a un être...",
+      image: "/post6.jpg"
+    },
+    {
+      id: 7,
+      title: "Post 1",
+      author: "Ray Ague",
+      date: "Aug. 2024",
+      content:
+        "Parfois, il suffit qu’une petite situation se présente pour que nous commencions à nous poser plusieurs questions. Nous nous demandons pourquoi la vie est ainsi, pourquoi nous devons subir à la place des autres, pourquoi nous sommes nés si nous ne pouvons pas être ...",
+      image: "/post7.jpg"
+    }
+    // {
+    //   id: 8,
+    //   title: "Post 2",
+    //   author: "Ray Ague",
+    //   date: "Jul.12 - 2024",
+    //   content:
+    //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi adipisci illum vel tempora pariatur? ...",
+    //   image: "/programming1.jpg"
+    // },
+    // {
+    //   id: 9,
+    //   title: "Post 1",
+    //   author: "Ray Ague",
+    //   date: "Jul.12 - 2024",
+    //   content:
+    //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi adipisci illum vel tempora pariatur? ...",
+    //   image: "/programming1.jpg"
+    // },
+    // {
+    //   id: 10,
+    //   title: "Post 2",
+    //   author: "Ray Ague",
+    //   date: "Jul.12 - 2024",
+    //   content:
+    //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi adipisci illum vel tempora pariatur? ...",
+    //   image: "/programming1.jpg"
+    // }
+    // Ajoute d'autres posts ici
+  ];
 
   return (
     <main className="flex min-h-screen flex-col items-center  bg-slate-950 font-sans transition ease-in">
@@ -76,12 +153,12 @@ export default function Page() {
             experiences that inspire growth and creativity. Join me as we
             explore ideas, reflect on challenges, and celebrate the journey of
             learning together.{" "}
-            <Link
+            {/* <Link
               href="/form"
               className="text-sky-400/90 underline underline-offset-3"
             >
               Click here to post
-            </Link>
+            </Link> */}
           </p>
         </div>
 
@@ -90,127 +167,25 @@ export default function Page() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white/65 pb-40">
           {posts.map((post) => (
             <Link key={post.id} href={`/posts/${post.id}`}>
-              <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 m-4">
+              <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
                 <Image
-                  src="/programming1.jpg"
+                  src={post.image}
                   width={500}
                   height={500}
                   alt="Picture"
-                  className="object-cover w-full rounded-t-xl"
+                  className=" object-cover w-full rounded-t-xl"
                 />
                 <h2 className="text-white text-2xl mt-2 mx-3">
-                  Posted by:{" "}
-                  <span className="italic text-3xl font-extrabold">
-                    {post.formFirstName} {post.formLastName}
+                  Posted by :{" "}
+                  <span className=" text-3xl font-bold tracking-tighter">
+                    {post.author}{" "}
                   </span>
                 </h2>
-                <h3 className="mb-3 mx-3 font-bold">
-                  {new Date(post.postDate).toLocaleDateString()}
-                </h3>
-                <p className="p-3">
-                  {post.formThoughts.length > 100
-                    ? post.formThoughts.substring(0, 100) + "... see more."
-                    : post.formThoughts}
-                </p>
+                <h3 className="mb-3 mx-3 font-bold">{post.date}</h3>
+                <p className="p-3">{post.content} ... see more.</p>
               </div>
             </Link>
           ))}
-          <Link href="">
-            <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
-              <Image
-                src="/programming1.jpg"
-                width={500}
-                height={500}
-                alt="Picture"
-                className=" object-cover w-full rounded-t-xl"
-              />
-              <h2 className="text-white text-2xl mt-2 mx-3">
-                Posted by :{" "}
-                <span className="italic text-3xl font-extrabold">
-                  Roberd Kingsman{" "}
-                </span>
-              </h2>
-              <h3 className="mb-3 mx-3 font-bold">Jul.12 - 2024</h3>
-              <p className="p-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
-                adipisci illum vel tempora pariatur? Dolorem molestias nihil
-                alias sapiente cumque quaerat aliquid omnis expedita! Amet natus
-                doloribus quas ex magni! ... see more.
-              </p>
-            </div>
-          </Link>
-          <Link href="">
-            <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
-              <Image
-                src="/programming1.jpg"
-                width={500}
-                height={500}
-                alt="Picture"
-                className=" object-cover w-full rounded-t-xl"
-              />
-              <h2 className="text-white text-2xl mt-2 mx-3">
-                Posted by :{" "}
-                <span className="italic text-3xl font-extrabold">
-                  Roberd Kingsman{" "}
-                </span>
-              </h2>
-              <h3 className="mb-3 mx-3 font-bold">Jul.12 - 2024</h3>
-              <p className="p-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
-                adipisci illum vel tempora pariatur? Dolorem molestias nihil
-                alias sapiente cumque quaerat aliquid omnis expedita! Amet natus
-                doloribus quas ex magni! ... see more.
-              </p>
-            </div>
-          </Link>
-          <Link href="">
-            <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
-              <Image
-                src="/programming1.jpg"
-                width={500}
-                height={500}
-                alt="Picture"
-                className=" object-cover w-full rounded-t-xl"
-              />
-              <h2 className="text-white text-2xl mt-2 mx-3">
-                Posted by :{" "}
-                <span className="italic text-3xl font-extrabold">
-                  Roberd Kingsman{" "}
-                </span>
-              </h2>
-              <h3 className="mb-3 mx-3 font-bold">Jul.12 - 2024</h3>
-              <p className="p-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
-                adipisci illum vel tempora pariatur? Dolorem molestias nihil
-                alias sapiente cumque quaerat aliquid omnis expedita! Amet natus
-                doloribus quas ex magni! ... see more.
-              </p>
-            </div>
-          </Link>
-          <Link href="">
-            <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
-              <Image
-                src="/programming1.jpg"
-                width={500}
-                height={500}
-                alt="Picture"
-                className=" object-cover w-full rounded-t-xl"
-              />
-              <h2 className="text-white text-2xl mt-2 mx-3">
-                Posted by :{" "}
-                <span className="italic text-3xl font-extrabold">
-                  Roberd Kingsman{" "}
-                </span>
-              </h2>
-              <h3 className="mb-3 mx-3 font-bold">Jul.12 - 2024</h3>
-              <p className="p-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
-                adipisci illum vel tempora pariatur? Dolorem molestias nihil
-                alias sapiente cumque quaerat aliquid omnis expedita! Amet natus
-                doloribus quas ex magni! ... see more.
-              </p>
-            </div>
-          </Link>
         </div>
       </div>
       <div className=" h-auto w-full relative bottom-0 flex justify-center items-center flex-row gap-3 p-3">

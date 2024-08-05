@@ -1,13 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
+import { storage } from "../../firebaseConfig"; // Assurez-vous d'importer votre configuration Firebase pour le stockage
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function FormPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [thoughts, setThoughts] = useState("");
   const [email, setEmail] = useState("");
+  const [image, setImage] = useState(null); // État pour l'image
   const [isLoading, setIsLoading] = useState(false);
 
   const validateEmail = (email) => {
@@ -25,13 +27,22 @@ export default function FormPage() {
     setIsLoading(true);
 
     try {
+      // Téléverser l'image si elle existe
+      let imageUrl = "";
+      if (image) {
+        const imageRef = ref(storage, `images/${image.name}`);
+        await uploadBytes(imageRef, image);
+        imageUrl = await getDownloadURL(imageRef); // Récupérer l'URL de l'image
+      }
+
       const Users = collection(db, "formResponses");
       const response = await addDoc(Users, {
         formFirstName: firstName,
         formLastName: lastName,
         formThoughts: thoughts,
         formEmail: email,
-        postDate: new Date().toISOString() // Ajouter la date de création
+        postDate: new Date().toISOString(), // Ajouter la date de création
+        imageUrl: imageUrl // Ajouter l'URL de l'image au document
       });
       console.log("Données envoyées :", response);
       alert("Données envoyées avec succès!");
@@ -44,6 +55,7 @@ export default function FormPage() {
       setLastName("");
       setThoughts("");
       setEmail("");
+      setImage(null); // Réinitialiser l'image
     }
   };
 
@@ -103,6 +115,18 @@ export default function FormPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="xavier1990@gmail.com"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              TÉLÉCHARGER UNE IMAGE
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              accept="image/*" // Limiter le type de fichier à une image
+              onChange={(e) => setImage(e.target.files[0])}
               required
             />
           </div>
