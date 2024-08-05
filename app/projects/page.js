@@ -22,7 +22,7 @@ import {
   // faMapMarkerAlt
 } from "@fortawesome/free-brands-svg-icons";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const handleBack = () => {
     router.back();
@@ -54,8 +54,8 @@ export default function page() {
           <h1 className="text-gray-50 font-black text-5xl">Projects</h1>
           <p className="text-white/75 text-lg">
             Every project is an opportunity to explore, innovate, and create
-            something meaningful. I'm passionate about bringing ideas to life
-            and sharing my vision through unique and impactful work.
+            something meaningful. I&apos;m passionate about bringing ideas to
+            life and sharing my vision through unique and impactful work.
           </p>
         </div>
 

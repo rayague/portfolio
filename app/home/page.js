@@ -21,7 +21,7 @@ import {
   // faEnvelope,
   // faMapMarkerAlt
 } from "@fortawesome/free-brands-svg-icons";
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const handleBack = () => {
     router.back();
@@ -67,7 +67,9 @@ export default function page() {
           />
           <div className="flex flex-col justify-evenly">
             <h1 className="text-extrabold text-white text-6xl">Hi</h1>
-            <h2 className="text-extrabold text-white text-4xl">I'm Ray AGUE</h2>
+            <h2 className="text-extrabold text-white text-4xl">
+              I&apos;m Ray AGUE
+            </h2>
             <p className="text-white/75 text-xl md:text-ml">
               Every journey begins with a single step, and I believe that
               creativity is the driving force that transforms dreams into

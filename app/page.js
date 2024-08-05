@@ -23,8 +23,8 @@ export default function Home() {
           Portfolio
         </h1>
         <p className="text-slate-300/75 text-base/6 text-center">
-          Explore my projects and journey. I'm excited to share my work with
-          you!
+          Explore my projects and journey. I&lsquo;m excited to share my work
+          with you!
         </p>
       </div>
     </main>

@@ -22,7 +22,7 @@ import {
   // faMapMarkerAlt
 } from "@fortawesome/free-brands-svg-icons";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const handleBack = () => {
     router.back();
