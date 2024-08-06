@@ -1,21 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-
-import { CustomEase } from "gsap/CustomEase";
-import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
-
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { PixiPlugin } from "gsap/PixiPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 p-24 font-sans">
