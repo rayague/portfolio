@@ -44,13 +44,13 @@ export default function Home() {
             <nav className="text-gray-300 flex flex-row decoration-none justify-center text-sm/6 align-center items-center font-bold gap-4">
               <Link
                 href="/home"
-                className="hover:text-gray-50 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 underline underline-offset-8"
+                className="hover:text-gray-50 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 "
               >
                 Home
               </Link>
               <Link
                 href="/contact"
-                className="hover:text-gray-50 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 underline underline-offset-8"
+                className="hover:text-gray-50 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 "
               >
                 Contact
               </Link>
