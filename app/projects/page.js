@@ -101,7 +101,7 @@ export default function Page() {
               </p>
             </div>
           </a>
-          <a href="">
+          <a href="https://oluwatobitrans.notemaster.org/">
             <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 duration-100 ">
               <Image
                 src="/picture2.jpg"
@@ -171,7 +171,7 @@ export default function Page() {
             </div>
           </a>
 
-          <a href="">
+          <a href="https://ledigitalmaster.notemaster.org/">
             <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 duration-100 ">
               <Image
                 src="/picture7.jpg"
