@@ -32,7 +32,7 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen flex-col items-center  bg-slate-950 font-sans transition ease-in">
-      <div className="h-auto w-full sticky top-0 flex flex-row backdrop-blur-md bg-white/5 shadow-2xl justify-between items-center px-3 sm:px-5 lg:px-20 md:px-10 gap-6 py-6 mb-5 ">
+      <div className="h-auto w-full top-0 flex flex-row backdrop-blur-md bg-white/5 shadow-2xl justify-between items-center px-3 sm:px-5 lg:px-20 md:px-10 gap-6 py-6 mb-5 ">
         <button
           onClick={handleBack}
           className="text-gray-50 font-black text-4xl"
