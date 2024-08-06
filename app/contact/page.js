@@ -59,7 +59,7 @@ export default function Page() {
         </div>
 
         <div className="h-px w-full bg-gray-800 my-16"></div>
-        <div className="container flex flex-col justify-center items-center text-white gap-6">
+        <div className="container flex flex-col justify-center items-center text-white mb-24 gap-6">
           <div className="sm:w-ful md:w-full w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30 border items-center justify-center flex rounded-md">
             {" "}
             <a
