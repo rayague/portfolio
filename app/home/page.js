@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useEffect } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+
 import {
   faCoffee,
   faPhone,
@@ -49,33 +51,145 @@ export default function Page() {
       </div>
       <div className="container px-5 sm:px-10 md:px-24 xl:px44 2xl:px44 lg:px44">
         <div className="h-auto w-full flex my-11 flex-col gap-6">
-          <h1 className="text-gray-50 font-black text-5xl">Home</h1>
-          <p className="text-white/75 text-lg">
-            Every project is a new adventure, a way to express my passion for
-            creation. I invite you to explore my universe, where each piece
-            tells a unique story.
-          </p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.3
+                }
+              }
+            }}
+          >
+            <h1 className="text-gray-50 font-black text-5xl">Home</h1>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.8
+                }
+              }
+            }}
+          >
+            <p className="text-white/75 text-lg">
+              Every project is a new adventure, a way to express my passion for
+              creation. I invite you to explore my universe, where each piece
+              tells a unique story.
+            </p>
+          </motion.div>
         </div>
         <div className="h-px w-full bg-gray-800 my-16"></div>
         <div className="container grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 text-white gap-3 mb-16">
-          <Image
-            src="/profile.JPG"
-            width={400}
-            height={400}
-            alt="Picture of the author"
-            className="shadow-2xl shadow-slate-800/70 object-cover"
-          />
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 1.2
+                }
+              }
+            }}
+          >
+            <Image
+              src="/profile.JPG"
+              width={400}
+              height={400}
+              alt="Picture of the author"
+              className="shadow-2xl shadow-slate-800/70 object-cover"
+            />
+          </motion.div>
+
           <div className="flex flex-col justify-evenly">
-            <h1 className="text-extrabold text-white text-6xl">Hi</h1>
-            <h2 className="text-extrabold text-white text-4xl">
-              I&apos;m Ray AGUE
-            </h2>
-            <p className="text-white/75 text-xl md:text-ml">
-              Every journey begins with a single step, and I believe that
-              creativity is the driving force that transforms dreams into
-              reality. With each project, I strive to leave a mark, inspiring
-              others to embrace their passions and pursue their unique paths.
-            </p>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 1.6
+                  }
+                }
+              }}
+            >
+              <h1 className="text-extrabold text-white text-6xl">Hi</h1>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 2
+                  }
+                }
+              }}
+            >
+              <h2 className="text-extrabold text-white text-4xl">
+                I&apos;m Ray AGUE
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 2.4
+                  }
+                }
+              }}
+            >
+              <p className="text-white/75 text-xl md:text-ml">
+                Every journey begins with a single step, and I believe that
+                creativity is the driving force that transforms dreams into
+                reality. With each project, I strive to leave a mark, inspiring
+                others to embrace their passions and pursue their unique paths.
+              </p>
+            </motion.div>
           </div>
         </div>
         {/* <div className="h-px w-full bg-gray-800 my-16"></div> */}

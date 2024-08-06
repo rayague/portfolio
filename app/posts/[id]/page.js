@@ -4,6 +4,8 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+
 import {
   faCoffee,
   faPhone,
@@ -184,32 +186,143 @@ export default function Page() {
       </div>
       <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
         <div className="h-auto w-full flex my-11 flex-col gap-6">
-          <h1 className="text-gray-50 font-black text-5xl">Posts</h1>
-          <p className="text-white/75 text-lg">
-            Welcome to the posts page! Here, I share insights, ideas, and
-            experiences that nurture our growth and creativity. Join me as we
-            explore various themes, reflect on the challenges we face, and
-            celebrate our learning journey together.
-          </p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.3
+                }
+              }
+            }}
+          >
+            <h1 className="text-gray-50 font-black text-5xl">Posts</h1>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.8
+                }
+              }
+            }}
+          >
+            <p className="text-white/75 text-lg">
+              Welcome to the posts page! Here, I share insights, ideas, and
+              experiences that nurture our growth and creativity. Join me as we
+              explore various themes, reflect on the challenges we face, and
+              celebrate our learning journey together.
+            </p>
+          </motion.div>
         </div>
         <div className="h-px w-full bg-gray-800 my-16"></div>
         <div className="grid grid-cols-1  text-white/65 pb-40 w-full container justify-center items-center">
           <div className="w-full mx-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150  p-5 ">
-            <Image
-              src={post.image}
-              width={500}
-              height={500}
-              alt="Picture"
-              className=" object-cover lg:w-1/2 md:w-full sm:w-full mb-5  mx-auto rounded-t-xl"
-            />
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 1.2
+                  }
+                }
+              }}
+            >
+              <Image
+                src={post.image}
+                width={500}
+                height={500}
+                alt="Picture"
+                className=" object-cover lg:w-1/2 md:w-full sm:w-full mb-5  mx-auto rounded-t-xl"
+              />
+            </motion.div>
 
-            <h1 className="text-3xl font-bold mb-4 tracking-tighter">
-              {post.formFirstName} {post.formLastName}
-            </h1>
-            <h2 className="text-xl mb-2">
-              Posté le : {new Date(post.postDate).toLocaleDateString()}
-            </h2>
-            <p className="mb-4 mx-3 font-base text-xl">{post.formThoughts}</p>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 1.6
+                  }
+                }
+              }}
+            >
+              <h1 className="text-3xl font-bold mb-4 tracking-tighter">
+                {post.formFirstName} {post.formLastName}
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 2
+                  }
+                }
+              }}
+            >
+              <h2 className="text-xl mb-2">
+                Posté le : {new Date(post.postDate).toLocaleDateString()}
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 1,
+                  opacity: 0
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 2.4
+                  }
+                }
+              }}
+            >
+              <p className="mb-4 mx-3 font-base text-xl">{post.formThoughts}</p>
+            </motion.div>
           </div>
         </div>
 

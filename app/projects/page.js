@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useEffect } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+
 import {
   faCoffee,
   faPhone,
@@ -51,12 +53,49 @@ export default function Page() {
       </div>
       <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
         <div className="h-auto w-full flex my-11 flex-col gap-6">
-          <h1 className="text-gray-50 font-black text-5xl">Projects</h1>
-          <p className="text-white/75 text-lg">
-            Every project is an opportunity to explore, innovate, and create
-            something meaningful. I&apos;m passionate about bringing ideas to
-            life and sharing my vision through unique and impactful work.
-          </p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.3
+                }
+              }
+            }}
+          >
+            <h1 className="text-gray-50 font-black text-5xl">Projects</h1>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.8
+                }
+              }
+            }}
+          >
+            <p className="text-white/75 text-lg">
+              Every project is an opportunity to explore, innovate, and create
+              something meaningful. I&apos;m passionate about bringing ideas to
+              life and sharing my vision through unique and impactful work.
+            </p>
+          </motion.div>
         </div>
 
         <div className="h-px w-full bg-gray-800 my-16"></div>

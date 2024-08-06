@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCoffee,
@@ -154,40 +156,95 @@ export default function Page() {
       </div>
       <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
         <div className="h-auto w-full flex my-11 flex-col gap-6">
-          <h1 className="text-gray-50 font-black text-5xl">Blog</h1>
-          <p className="text-white/75 text-lg">
-            In a world full of stories, I strive to share insights and
-            experiences that inspire growth and creativity. Join me as we
-            explore ideas, reflect on challenges, and celebrate the journey of
-            learning together.{" "}
-          </p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.3
+                }
+              }
+            }}
+          >
+            <h1 className="text-gray-50 font-black text-5xl">Blog</h1>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.8
+                }
+              }
+            }}
+          >
+            <p className="text-white/75 text-lg">
+              In a world full of stories, I strive to share insights and
+              experiences that inspire growth and creativity. Join me as we
+              explore ideas, reflect on challenges, and celebrate the journey of
+              learning together.{" "}
+            </p>
+          </motion.div>
         </div>
 
         <div className="h-px w-full bg-gray-800 my-16"></div>
         <div className="container flex flex-row text-white gap-6 "></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white/65 pb-40">
-          {posts.map((post) => (
-            <Link key={post.id} href={`/posts/${post.id}`}>
-              <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
-                <Image
-                  src={post.image}
-                  width={500}
-                  height={500}
-                  alt="Picture"
-                  className=" object-cover w-full rounded-t-xl"
-                />
-                <h2 className="text-white text-2xl mt-2 mx-3">
-                  Posted by :{" "}
-                  <span className=" text-3xl font-bold tracking-tighter">
-                    {post.author}{" "}
-                  </span>
-                </h2>
-                <h3 className="mb-3 mx-3 font-bold">{post.date}</h3>
-                <p className="p-3">{post.content} ... see more.</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 1,
+              opacity: 0
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                delay: 1.4
+              }
+            }
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white/65 pb-40">
+            {posts.map((post) => (
+              <Link key={post.id} href={`/posts/${post.id}`}>
+                <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
+                  <Image
+                    src={post.image}
+                    width={500}
+                    height={500}
+                    alt="Picture"
+                    className=" object-cover w-full rounded-t-xl"
+                  />
+                  <h2 className="text-white text-2xl mt-2 mx-3">
+                    Posted by :{" "}
+                    <span className=" text-3xl font-bold tracking-tighter">
+                      {post.author}{" "}
+                    </span>
+                  </h2>
+                  <h3 className="mb-3 mx-3 font-bold">{post.date}</h3>
+                  <p className="p-3">{post.content} ... see more.</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
       </div>
       <div className=" h-auto w-full relative bottom-0 flex justify-center items-center flex-row gap-3 p-3">
         <a
