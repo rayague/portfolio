@@ -94,7 +94,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className=" h-auto w-full absolute bottom-0 flex justify-center items-center flex-row gap-3 p-3">
+      <div className=" h-auto w-full relative bottom-0 flex justify-center items-center flex-row gap-3 p-3">
         <a
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
