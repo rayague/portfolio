@@ -10,7 +10,7 @@ import {
   faCoffee,
   faPhone,
   faEnvelope,
-  faMapMarkerAlt
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -18,7 +18,7 @@ import {
   faInstagram,
   faLinkedin,
   faWhatsapp,
-  faGithub
+  faGithub,
   // faPhone,
   // faEnvelope,
   // faMapMarkerAlt
@@ -59,15 +59,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 0.3
-                }
-              }
+                  delay: 0.3,
+                },
+              },
             }}
           >
             <h1 className="text-gray-50 font-black text-5xl">Projects</h1>
@@ -79,15 +79,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 0.8
-                }
-              }
+                  delay: 0.8,
+                },
+              },
             }}
           >
             <p className="text-white/75 text-lg">
@@ -106,15 +106,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 1.2
-                }
-              }
+                  delay: 1.2,
+                },
+              },
             }}
           >
             <a href="https://rayague.github.io/simpleFolio/">
@@ -145,15 +145,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 1.6
-                }
-              }
+                  delay: 1.6,
+                },
+              },
             }}
           >
             <a href="https://rayague.github.io/amasprecision/">
@@ -187,15 +187,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2
-                }
-              }
+                  delay: 2,
+                },
+              },
             }}
           >
             <a href="https://oluwatobitrans.notemaster.org/">
@@ -229,15 +229,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.4
-                }
-              }
+                  delay: 2.4,
+                },
+              },
             }}
           >
             <a href="https://rayague.github.io/fadoul-global-industry/">
@@ -271,58 +271,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8
-                }
-              }
-            }}
-          >
-            <a href="https://rayague.github.io/projet_jul_01/">
-              <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 duration-100 ">
-                <Image
-                  src="/h24.jpg"
-                  width={500}
-                  height={500}
-                  alt="H24 Sex_connexion"
-                  className="object-cover w-full"
-                />
-                <h2 className="text-white text-2xl mt-2 mx-3">
-                  H24 Sex_connexion
-                </h2>
-                <h3 className="mb-3 mx-3 font-bold">Jul. 12 - 2024</h3>
-                <p className="p-3">
-                  I have temporarily stopped working on the H24 Sex_connexion
-                  project. It is still under analysis. This project is intended
-                  for an adult audience due to its sensitive content. It
-                  features photos that are not suitable for all viewers. I was
-                  collaborating with the requester to build a solid foundation
-                  for the project. The aim is to develop a comprehensive
-                  platform that meets specific needs in the future.
-                </p>
-              </div>
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
+                  delay: 3.2,
+                },
               },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 3.2
-                }
-              }
             }}
           >
             <a href="https://ledigitalmaster.notemaster.org/">
@@ -356,15 +313,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 3.6
-                }
-              }
+                  delay: 3.6,
+                },
+              },
             }}
           >
             <a href="https://rayague.github.io/OnlineCvRayAgueEn/">
@@ -395,15 +352,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 4
-                }
-              }
+                  delay: 4,
+                },
+              },
             }}
           >
             <a href="/">
@@ -423,6 +380,45 @@ export default function Page() {
                   more effectively. This project allows me to showcase my skills
                   and experience in a professional manner. I aim to create an
                   engaging user experience and highlight my work.
+                </p>
+              </div>
+            </a>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 2.8,
+                },
+              },
+            }}
+          >
+            <a href="https://rayague.github.io/vroc-creation/">
+              <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 duration-100 ">
+                <Image
+                  src="/programming9.jpg"
+                  width={500}
+                  height={500}
+                  alt="vroc-creation"
+                  className="object-cover w-full"
+                />
+                <h2 className="text-white text-2xl mt-2 mx-3">VROC-CREATION</h2>
+                <h3 className="mb-3 mx-3 font-bold">Oct - 2024</h3>
+                <p className="p-3">
+                  As the lead developer at VROC-CRÉATION, I was responsible for
+                  the development and design of our website. I closely
+                  collaborated with the team to ensure that every element of the
+                  site reflects our shared vision. My commitment helped create a
+                  platform that embodies our passion for innovation and
+                  creativity.
                 </p>
               </div>
             </a>
