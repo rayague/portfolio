@@ -31,10 +31,6 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="profile.JPG" type="image/png" />
       {/* Google Analytics */}
       <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-      ></script>
-      <script
         dangerouslySetInnerHTML={{
           __html: `
               window.dataLayer = window.dataLayer || [];
