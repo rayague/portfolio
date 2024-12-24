@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
       <meta property="og:image" content="/profile.JPG" />
-      <meta property="og:url" content="https://www.rayague.com" />
+      <meta property="og:url" content="https://portfolio-cnkp.vercel.app/" />
       <meta name="twitter:card" content="summary_large_image" />
       <title>Ray Ague - Portfolio</title>
       <link rel="icon" href="profile.JPG" type="image/png" />
