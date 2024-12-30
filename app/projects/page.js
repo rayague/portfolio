@@ -10,7 +10,7 @@ import {
   faCoffee,
   faPhone,
   faEnvelope,
-  faMapMarkerAlt,
+  faMapMarkerAlt
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -18,7 +18,7 @@ import {
   faInstagram,
   faLinkedin,
   faWhatsapp,
-  faGithub,
+  faGithub
   // faPhone,
   // faEnvelope,
   // faMapMarkerAlt
@@ -59,15 +59,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 0.3,
-                },
-              },
+                  delay: 0.3
+                }
+              }
             }}
           >
             <h1 className="text-gray-50 font-black text-5xl">Projects</h1>
@@ -79,15 +79,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 0.8,
-                },
-              },
+                  delay: 0.8
+                }
+              }
             }}
           >
             <p className="text-white/75 text-lg">
@@ -106,15 +106,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 1.2,
-                },
-              },
+                  delay: 1.2
+                }
+              }
             }}
           >
             <a href="https://rayague.github.io/simpleFolio/">
@@ -145,15 +145,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 1.6,
-                },
-              },
+                  delay: 1.6
+                }
+              }
             }}
           >
             <a href="https://rayague.github.io/amasprecision/">
@@ -187,15 +187,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2,
-                },
-              },
+                  delay: 2
+                }
+              }
             }}
           >
             <a href="https://oluwatobitrans.notemaster.org/">
@@ -229,15 +229,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.4,
-                },
-              },
+                  delay: 2.4
+                }
+              }
             }}
           >
             <a href="https://rayague.github.io/fadoul-global-industry/">
@@ -271,15 +271,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 3.2,
-                },
-              },
+                  delay: 3.2
+                }
+              }
             }}
           >
             <a href="https://ledigitalmaster.notemaster.org/">
@@ -313,15 +313,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 3.6,
-                },
-              },
+                  delay: 3.6
+                }
+              }
             }}
           >
             <a href="https://rayague.github.io/OnlineCvRayAgueEn/">
@@ -352,15 +352,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 4,
-                },
-              },
+                  delay: 4
+                }
+              }
             }}
           >
             <a href="/">
@@ -390,15 +390,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0,
+                opacity: 0
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8,
-                },
-              },
+                  delay: 2.8
+                }
+              }
             }}
           >
             <a href="https://rayague.github.io/vroc-creation/">
@@ -419,6 +419,48 @@ export default function Page() {
                   site reflects our shared vision. My commitment helped create a
                   platform that embodies our passion for innovation and
                   creativity.
+                </p>
+              </div>
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 2.8
+                }
+              }
+            }}
+          >
+            <a href="https://dossoumarcel.vercel.app/">
+              <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 duration-100 ">
+                <Image
+                  src="/picture5.jpg"
+                  width={500}
+                  height={500}
+                  alt="vroc-creation"
+                  className="object-cover w-full"
+                />
+                <h2 className="text-white text-2xl mt-2 mx-3">Portfolio</h2>
+                <h3 className="mb-3 mx-3 font-bold">Déc - 2024</h3>
+                <p className="p-3">
+                  I had the privilege of designing and developing a personalized
+                  portfolio website for a distinguished doctor. The project was
+                  focused on creating an elegant, user-friendly platform that
+                  effectively showcased the doctor's expertise, accomplishments,
+                  and medical services. By closely working with the doctor to
+                  capture their vision, I created a website that not only looks
+                  professional but also provides patients with a seamless and
+                  informative experience.
                 </p>
               </div>
             </a>
