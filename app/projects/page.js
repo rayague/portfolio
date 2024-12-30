@@ -456,11 +456,11 @@ export default function Page() {
                   I had the privilege of designing and developing a personalized
                   portfolio website for a distinguished doctor. The project was
                   focused on creating an elegant, user-friendly platform that
-                  effectively showcased the doctor's expertise, accomplishments,
-                  and medical services. By closely working with the doctor to
-                  capture their vision, I created a website that not only looks
-                  professional but also provides patients with a seamless and
-                  informative experience.
+                  effectively showcased the doctor&apos;s expertise,
+                  accomplishments, and medical services. By closely working with
+                  the doctor to capture their vision, I created a website that
+                  not only looks professional but also provides patients with a
+                  seamless and informative experience.
                 </p>
               </div>
             </a>
