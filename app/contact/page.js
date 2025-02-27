@@ -30,15 +30,15 @@ export default function Page() {
     router.back();
   };
   return (
-    <main className="flex min-h-screen flex-col items-center  bg-slate-950 font-sans">
-      <div className="h-auto w-full flex flex-row backdrop-blur-md bg-white/5 shadow-2xl justify-between items-center px-3 sm:px-5 lg:px-20 md:px-10 gap-6 py-6 mb-5 ">
+    <main className="flex flex-col items-center min-h-screen font-sans bg-slate-950">
+      <div className="flex flex-row items-center justify-between w-full h-auto gap-6 px-3 py-6 mb-5 shadow-2xl backdrop-blur-md bg-white/5 sm:px-5 lg:px-20 md:px-10 ">
         <button
           onClick={handleBack}
-          className="text-gray-50 font-black text-4xl"
+          className="text-4xl font-black text-gray-50"
         >
           &larr;
         </button>
-        <nav className="text-gray-200 flex flex-row justify-end  decoration-none text-md/6 font-extrabold gap-4">
+        <nav className="flex flex-row justify-end gap-4 font-extrabold text-gray-200 decoration-none text-md/6">
           <Link href="/home" className="hover:text-gray-50">
             Home
           </Link>
@@ -51,7 +51,7 @@ export default function Page() {
         </nav>
       </div>
       <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
-        <div className="h-auto w-full flex my-11 flex-col gap-6">
+        <div className="flex flex-col w-full h-auto gap-6 my-11">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -69,7 +69,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-gray-50 font-black text-5xl">Contact</h1>
+            <h1 className="text-5xl font-black text-gray-50">Contact</h1>
           </motion.div>
 
           <motion.div
@@ -89,15 +89,15 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-white/75 text-lg">
+            <p className="text-lg text-white/75">
               Connecting with others is the first step towards collaboration and
-              growth. I’m always open to new opportunities, ideas, and
+              growth. I&apos;m always open to new opportunities, ideas, and
               conversations that inspire creativity and innovation.
             </p>
           </motion.div>
         </div>
 
-        <div className="h-px w-full bg-gray-800 my-16"></div>
+        <div className="w-full h-px my-16 bg-gray-800"></div>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -115,8 +115,8 @@ export default function Page() {
             }
           }}
         >
-          <div className="container flex flex-col justify-center items-center text-white mb-24 gap-6">
-            <div className="sm:w-ful md:w-full w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30 border items-center justify-center flex rounded-md">
+          <div className="container flex flex-col items-center justify-center gap-6 mb-24 text-white">
+            <div className="flex items-center justify-center w-full border rounded-md sm:w-ful md:w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30">
               {" "}
               <a
                 href="https://www.google.com/maps/place/Abomey-Calavi,+Benin"
@@ -124,10 +124,10 @@ export default function Page() {
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon className="mr-2" icon={faMapMarkerAlt} />
-                Abomey-Calavi - Bénin
+                Abomey-Calavi, Bénin
               </a>
             </div>
-            <div className="sm:w-ful md:w-full w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30 border rounded-md items-center justify-center flex">
+            <div className="flex items-center justify-center w-full border rounded-md sm:w-ful md:w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30">
               <a
                 href="https://wa.me/22960932967"
                 target="_blank"
@@ -137,7 +137,7 @@ export default function Page() {
                 29 67
               </a>
             </div>
-            <div className="sm:w-ful md:w-full w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30 border rounded-md items-center justify-center flex">
+            <div className="flex items-center justify-center w-full border rounded-md sm:w-ful md:w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30">
               {" "}
               <a
                 href="mailto:rayague03@gmail.com"
@@ -151,12 +151,12 @@ export default function Page() {
           </div>
         </motion.div>
       </div>
-      <div className=" h-auto w-full relative bottom-0 flex justify-center items-center flex-row gap-3 p-3">
+      <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
         <a
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
           rel="noopener noreferrer"
-          className=" text-white"
+          className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faFacebook} />
         </a>
@@ -164,7 +164,7 @@ export default function Page() {
           href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
           target="_blank"
           rel="noopener noreferrer"
-          className=" text-white"
+          className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faInstagram} />
         </a>
@@ -172,7 +172,7 @@ export default function Page() {
           href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
-          className=" text-white"
+          className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faLinkedin} />
         </a>
@@ -193,6 +193,11 @@ export default function Page() {
           <FontAwesomeIcon className="size-8" icon={faGithub} />
         </a>
       </div>
+      <p className="mt-4 mb-8 text-sm text-center text-white">
+        © copyright -{" "}
+        <Link href="https://portfolio-cnkp.vercel.app">Ray Ague</Link> All
+        rights reserved.
+      </p>
     </main>
   );
 }

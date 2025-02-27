@@ -134,15 +134,15 @@ export default function Page() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center  bg-slate-950 font-sans transition ease-in">
-      <div className="h-auto w-full flex flex-row backdrop-blur-md bg-white/5 shadow-2xl justify-between items-center px-3 sm:px-5 lg:px-20 md:px-10 gap-6 py-6 mb-5 ">
+    <main className="flex flex-col items-center min-h-screen font-sans transition ease-in bg-slate-950">
+      <div className="flex flex-row items-center justify-between w-full h-auto gap-6 px-3 py-6 mb-5 shadow-2xl backdrop-blur-md bg-white/5 sm:px-5 lg:px-20 md:px-10 ">
         <button
           onClick={handleBack}
-          className="text-gray-50 font-black text-4xl"
+          className="text-4xl font-black text-gray-50"
         >
           &larr;
         </button>
-        <nav className="text-gray-200 flex flex-row justify-end  decoration-none text-md/6 font-extrabold gap-4 ">
+        <nav className="flex flex-row justify-end gap-4 font-extrabold text-gray-200 decoration-none text-md/6 ">
           <Link href="/home" className="hover:text-gray-50">
             Home
           </Link>
@@ -155,7 +155,7 @@ export default function Page() {
         </nav>
       </div>
       <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
-        <div className="h-auto w-full flex my-11 flex-col gap-6">
+        <div className="flex flex-col w-full h-auto gap-6 my-11">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -173,7 +173,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-gray-50 font-black text-5xl">Blog</h1>
+            <h1 className="text-5xl font-black text-gray-50">Blog</h1>
           </motion.div>
 
           <motion.div
@@ -193,7 +193,7 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-white/75 text-lg">
+            <p className="text-lg text-white/75">
               In a world full of stories, I strive to share insights and
               experiences that inspire growth and creativity. Join me as we
               explore ideas, reflect on challenges, and celebrate the journey of
@@ -202,8 +202,8 @@ export default function Page() {
           </motion.div>
         </div>
 
-        <div className="h-px w-full bg-gray-800 my-16"></div>
-        <div className="container flex flex-row text-white gap-6 "></div>
+        <div className="w-full h-px my-16 bg-gray-800"></div>
+        <div className="container flex flex-row gap-6 text-white "></div>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -221,24 +221,24 @@ export default function Page() {
             }
           }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white/65 pb-40">
+          <div className="grid grid-cols-1 gap-8 pb-40 sm:grid-cols-2 lg:grid-cols-3 text-white/65">
             {posts.map((post) => (
               <Link key={post.id} href={`/posts/${post.id}`}>
-                <div className="w-auto h-auto bg-slate-900/60 rounded-xl shadow-2xl shadow-slate-800/50 delay-150 hover:-translate-y-1 hover:scale-110 border hover:bg-slate-600/60 duration-100 ">
+                <div className="w-auto h-auto duration-100 delay-150 border shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
                   <Image
                     src={post.image}
                     width={500}
                     height={500}
                     alt="Picture"
-                    className=" object-cover w-full rounded-t-xl"
+                    className="object-cover w-full rounded-t-xl"
                   />
-                  <h2 className="text-white text-2xl mt-2 mx-3">
+                  <h2 className="mx-3 mt-2 text-2xl text-white">
                     Posted by :{" "}
-                    <span className=" text-3xl font-bold tracking-tighter">
+                    <span className="text-3xl font-bold tracking-tighter ">
                       {post.author}{" "}
                     </span>
                   </h2>
-                  <h3 className="mb-3 mx-3 font-bold">{post.date}</h3>
+                  <h3 className="mx-3 mb-3 font-bold">{post.date}</h3>
                   <p className="p-3">{post.content} ... see more.</p>
                 </div>
               </Link>
@@ -246,12 +246,12 @@ export default function Page() {
           </div>
         </motion.div>
       </div>
-      <div className=" h-auto w-full relative bottom-0 flex justify-center items-center flex-row gap-3 p-3">
+      <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
         <a
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
           rel="noopener noreferrer"
-          className=" text-white"
+          className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faFacebook} />
         </a>
@@ -259,7 +259,7 @@ export default function Page() {
           href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
           target="_blank"
           rel="noopener noreferrer"
-          className=" text-white"
+          className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faInstagram} />
         </a>
@@ -267,7 +267,7 @@ export default function Page() {
           href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
-          className=" text-white"
+          className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faLinkedin} />
         </a>
@@ -288,6 +288,11 @@ export default function Page() {
           <FontAwesomeIcon className="size-8" icon={faGithub} />
         </a>
       </div>
+      <p className="mt-4 mb-8 text-sm text-center text-white">
+        © copyright -{" "}
+        <Link href="https://portfolio-cnkp.vercel.app">Ray Ague</Link> All
+        rights reserved.
+      </p>
     </main>
   );
 }

@@ -24,22 +24,12 @@ export default function RootLayout({ children }) {
       {/* Open Graph */}
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
-      <meta property="og:image" content="/profile.JPG" />
+      <meta property="og:image" content="/web.png" />
       <meta property="og:url" content="https://portfolio-cnkp.vercel.app/" />
       <meta name="twitter:card" content="summary_large_image" />
       <title>Ray Ague - Portfolio</title>
-      <link rel="icon" href="profile.JPG" type="image/png" />
+      <link rel="icon" href="web.png" type="image/png" />
       {/* Google Analytics */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config');
-            `
-        }}
-      />
       <body className={inter.className}>{children}</body>
     </html>
   );

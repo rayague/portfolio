@@ -22,41 +22,8 @@ export default function Home() {
         }
       }}
     >
-      <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 p-24 font-sans">
-        <div className="h-80 w-full flex flex-col justify-center items-center gap-6">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.8
-                }
-              }
-            }}
-          >
-            <nav className="text-gray-300 flex flex-row decoration-none justify-center text-sm/6 align-center items-center font-bold gap-4">
-              <Link
-                href="/home"
-                className="hover:text-gray-50 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 "
-              >
-                Home
-              </Link>
-              <Link
-                href="/contact"
-                className="hover:text-gray-50 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 "
-              >
-                Contact
-              </Link>
-            </nav>
-          </motion.div>
-
+      <main className="flex flex-col items-center justify-center min-h-screen p-24 font-sans bg-slate-950">
+        <div className="flex flex-col items-center justify-center w-full gap-6 h-80">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -95,12 +62,49 @@ export default function Home() {
               }
             }}
           >
-            <p className="text-slate-300/75 text-base/6 text-center">
+            <p className="text-center text-slate-300/75 text-base/6">
               Explore my projects and journey. I&lsquo;m excited to share my
               work with you!
             </p>
           </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 1,
+                opacity: 0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.8
+                }
+              }
+            }}
+          >
+            <nav className="flex flex-row items-center justify-center gap-4 font-bold text-gray-300 decoration-none text-sm/6 align-center">
+              <Link
+                href="/home"
+                className="px-8 py-2 transition ease-in-out border border-white rounded-xl hover:text-gray-50 delay-10 hover:-translate-y-1 hover:scale-110"
+              >
+                Home
+              </Link>
+              <Link
+                href="/contact"
+                className="px-8 py-2 transition ease-in-out border border-white rounded-xl hover:text-gray-50 delay-10 hover:-translate-y-1 hover:scale-110 "
+              >
+                Contact
+              </Link>
+            </nav>
+          </motion.div>
         </div>
+        <p className="absolute text-sm text-center text-white bottom-3">
+          © copyright -{" "}
+          <Link href="https://portfolio-cnkp.vercel.app">Ray Ague</Link> All
+          rights reserved.
+        </p>
       </main>
     </motion.div>
   );
