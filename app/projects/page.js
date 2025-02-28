@@ -597,7 +597,7 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://dossoumarcel.vercel.app/">
+            <a href="">
               <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
                 <Image
                   src="/laundgram.png"
