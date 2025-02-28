@@ -629,7 +629,7 @@ export default function Page() {
           <p class="text-lg text-white leading-relaxed">
             Throughout my university studies, I focused primarily on web
             technologies, which led me to work on numerous projects. While I
-            still don't consider myself an expert in web development, this
+            still don&apos;t consider myself an expert in web development, this
             journey has been an incredible learning experience. I&apos;m
             continuously developing personal projects that will soon be added to
             my portfolio as they are completed, all with the goal of improving
