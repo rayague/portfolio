@@ -5,10 +5,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Ray Ague - Portfolio",
-  description: "PortFolio site by Ray AGUE",
+  description: "PortFolio site by Ray Ague",
   author: "Ray Ague",
   keywords:
-    "Ray Ague, portfolio, web developer, projects, IT, software development"
+    "Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, portfolio, web developer, projects, IT, software development"
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta
         name="keywords"
-        content="Ray Ague, portfolio, web developer, projects, IT, software development"
+        content="Ray Ague, portfolio, web developer, projects, IT, software development, blog"
       />
       <meta name="author" content="Ray Ague" />
       {/* Open Graph */}

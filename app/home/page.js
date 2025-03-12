@@ -123,7 +123,7 @@ export default function Page() {
             />
           </motion.div>
 
-          <div className="flex flex-col justify-evenly">
+          <div className="flex flex-col justify-evenly gap-8">
             <motion.div
               initial="hidden"
               animate="visible"

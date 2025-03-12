@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.rayague.com/</loc>
-    <lastmod>2024-12-21</lastmod>
+    <loc>https://portfolio-cnkp.vercel.app/</loc>
+    <lastmod>2025-03-12</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.rayague.com/about</loc>
-    <lastmod>2024-12-21</lastmod>
+    <loc>https://portfolio-cnkp.vercel.app/home</loc>
+    <lastmod>2025-03-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.rayague.com/projects</loc>
-    <lastmod>2024-12-21</lastmod>
+    <loc>https://portfolio-cnkp.vercel.app/projects</loc>
+    <lastmod>2025-03-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio-cnkp.vercel.app/blog</loc>
+    <lastmod>2025-03-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio-cnkp.vercel.app/contact</loc>
+    <lastmod>2025-03-12</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
