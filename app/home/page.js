@@ -123,7 +123,7 @@ export default function Page() {
             />
           </motion.div>
 
-          <div className="flex flex-col justify-evenly gap-8">
+          <div className="flex flex-col justify-evenly gap-8 lg:gap-4 md:gap-4 mb-16">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -192,10 +192,9 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        {/* <div className="w-full h-px my-16 bg-gray-800"></div> */}
       </div>
 
-      <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
+      <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 mt-16">
         <a
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
