@@ -1,4 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
 
+# Host
+Host: https://portfolio-cnkp.vercel.app
+
+# Sitemaps
 Sitemap: https://portfolio-cnkp.vercel.app/sitemap.xml
