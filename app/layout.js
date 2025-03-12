@@ -8,7 +8,7 @@ export const metadata = {
   description: "PortFolio site by Ray Ague",
   author: "Ray Ague",
   keywords:
-    "Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, portfolio, web developer, projects, IT, software development"
+    "Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, Ague, RAY, AGUE, RAY AGUE, nextJS, Motivation, motivation, MOTIVATION, nextjs, NEXTJS, Portfolio, PORTFOLIO, Projects, projects, PROJECTS, project, projets, Projet portfolio, web developer, projects, IT, software, development, developper, développement web"
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta
         name="keywords"
-        content="Ray Ague, portfolio, web developer, projects, IT, software development, blog"
+        content="Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, Ague, RAY, AGUE, RAY AGUE, nextJS, Motivation, motivation, MOTIVATION, nextjs, NEXTJS, Portfolio, PORTFOLIO, Projects, projects, PROJECTS, project, projets, Projet portfolio, web developer, projects, IT, software, development, developper, développement web"
       />
       <meta name="author" content="Ray Ague" />
       {/* Open Graph */}

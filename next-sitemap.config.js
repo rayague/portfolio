@@ -4,5 +4,6 @@ module.exports = {
     generateRobotsTxt: true,
     // optionnel : exclure certaines pages
     // exclude: ['/admin'],
+    outDir: './public',
   };
   
