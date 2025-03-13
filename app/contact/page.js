@@ -69,7 +69,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-5xl font-black text-gray-50">Contact</h1>
+            <h1 className="text-6xl font-black text-gray-50">Contact</h1>
           </motion.div>
 
           <motion.div
@@ -89,7 +89,7 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-lg text-white/75">
+            <p className="text-xl text-white leading-relaxed">
               Connecting with others is the first step towards collaboration and
               growth. I&apos;m always open to new opportunities, ideas, and
               conversations that inspire creativity and innovation.
@@ -118,80 +118,80 @@ export default function Page() {
           <div className="container flex flex-col items-center justify-center gap-6 mb-24 text-white">
             <div className="flex items-center justify-center w-full border rounded-md sm:w-ful md:w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30">
               {" "}
-              <a
+              <Link
                 href="https://www.google.com/maps/place/Abomey-Calavi,+Benin"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon className="mr-2" icon={faMapMarkerAlt} />
                 Abomey-Calavi, Bénin
-              </a>
+              </Link>
             </div>
             <div className="flex items-center justify-center w-full border rounded-md sm:w-ful md:w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30">
-              <a
+              <Link
                 href="https://wa.me/22960932967"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon className="mr-2" icon={faPhone} /> +229 60 93
                 29 67
-              </a>
+              </Link>
             </div>
             <div className="flex items-center justify-center w-full border rounded-md sm:w-ful md:w-full lg:w-1/2 p-7 backdrop-blur-md bg-slate-600/30">
               {" "}
-              <a
+              <Link
                 href="mailto:rayague03@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon className="mr-2" icon={faEnvelope} />{" "}
                 rayague03@gmail.com
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
       </div>
       <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
-        <a
+        <Link
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faFacebook} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faInstagram} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://wa.me/22960932967"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/rayague"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faGithub} />
-        </a>
+        </Link>
       </div>
       <p className="mt-4 mb-8 text-sm text-center text-white">
         © copyright -{" "}

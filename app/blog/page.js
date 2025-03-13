@@ -173,7 +173,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-5xl font-black text-gray-50">Blog</h1>
+            <h1 className="text-6xl font-black text-gray-50">Blog</h1>
           </motion.div>
 
           <motion.div
@@ -193,7 +193,7 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-lg text-white/75">
+            <p className="text-xl text-white leading-relaxed">
               In a world full of stories, I strive to share insights and
               experiences that inspire growth and creativity. Join me as we
               explore ideas, reflect on challenges, and celebrate the journey of
@@ -224,7 +224,7 @@ export default function Page() {
           <div className="grid grid-cols-1 gap-8 pb-40 sm:grid-cols-2 lg:grid-cols-3 text-white/65">
             {posts.map((post) => (
               <Link key={post.id} href={`/posts/${post.id}`}>
-                <div className="w-auto h-auto duration-100 delay-150 border shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+                <div className="w-auto h-auto duration-100 delay-150 border shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                   <Image
                     src={post.image}
                     width={500}
@@ -247,46 +247,46 @@ export default function Page() {
         </motion.div>
       </div>
       <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
-        <a
+       <Link
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faFacebook} />
-        </a>
-        <a
+        </Link>
+       <Link
           href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faInstagram} />
-        </a>
-        <a
+        </Link>
+       <Link
           href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-        </a>
-        <a
+        </Link>
+       <Link
           href="https://wa.me/22960932967"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-        </a>
-        <a
+        </Link>
+       <Link
           href="https://github.com/rayague"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faGithub} />
-        </a>
+        </Link>
       </div>
       <p className="mt-4 mb-8 text-sm text-center text-white">
         © copyright -{" "}

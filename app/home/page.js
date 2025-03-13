@@ -68,7 +68,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-5xl font-black text-gray-50">Home</h1>
+            <h1 className="text-6xl font-black text-gray-50">Home</h1>
           </motion.div>
 
           <motion.div
@@ -88,7 +88,7 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-lg text-white/75">
+            <p className="text-xl text-white leading-relaxed">
               Every project is a new adventure, a way to express my passion for
               creation. I invite you to explore my universe, where each piece
               tells a unique story.
@@ -119,11 +119,11 @@ export default function Page() {
               width={400}
               height={400}
               alt="Picture of the author"
-              className="object-cover shadow-xl shadow-gray-600/70"
+              className="object-coverd h-full object-cover shadow-xl shadow-gray-600/70"
             />
           </motion.div>
 
-          <div className="flex flex-col justify-evenly gap-8 lg:gap-4 md:gap-4 mb-16">
+          <div className="flex flex-col justify-evenly items-start gap-8 lg:gap-4 md:gap-4">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -141,7 +141,7 @@ export default function Page() {
                 }
               }}
             >
-              <h1 className="text-6xl text-white text-extrabold">Hi</h1>
+              <h1 className="text-7xl text-white text-extrabold font-black">Hi</h1>
             </motion.div>
 
             <motion.div
@@ -161,7 +161,7 @@ export default function Page() {
                 }
               }}
             >
-              <h2 className="text-4xl text-white text-extrabold">
+              <h2 className="text-6xl text-white text-extrabold font-black">
                 I&apos;m Ray AGUE
               </h2>
             </motion.div>
@@ -183,7 +183,7 @@ export default function Page() {
                 }
               }}
             >
-              <p className="text-xl text-white/75 md:text-ml">
+              <p className="  text-xl text-white leading-relaxed md:text-ml">
                 Every journey begins with a single step, and I believe that
                 creativity is the driving force that transforms dreams into
                 reality. With each project, I strive to leave a mark, inspiring
@@ -195,46 +195,46 @@ export default function Page() {
       </div>
 
       <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 mt-16">
-        <a
+        <Link
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faFacebook} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faInstagram} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://wa.me/22960932967"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/rayague"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faGithub} />
-        </a>
+        </Link>
       </div>
       <p className="mt-4 mb-8 text-sm text-center text-white">
         © copyright -{" "}

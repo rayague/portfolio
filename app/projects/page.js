@@ -61,7 +61,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-5xl font-black text-gray-50">Projects</h1>
+            <h1 className="text-6xl font-black text-gray-50">Projects</h1>
           </motion.div>
 
           <motion.div
@@ -81,7 +81,7 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-lg text-white/75">
+            <p className="text-xl text-white leading-relaxed">
               Every project is an opportunity to explore, innovate, and create
               something meaningful. I&apos;m passionate about bringing ideas to
               life and sharing my vision through unique and impactful work.
@@ -108,8 +108,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://rayague.github.io/simpleFolio/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://rayague.github.io/simpleFolio/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/portofolio.jpeg"
                   width={500}
@@ -117,9 +117,9 @@ export default function Page() {
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">Portfolio</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Portfolio</h2>
                 <h3 className="mx-3 mb-3 font-bold">Apr. 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I created a personal portfolio to enhance my programming
                   skills. This project allowed me to explore various web
                   development techniques. The portfolio showcases my creativity
@@ -127,7 +127,7 @@ export default function Page() {
                   and highlights my projects.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -147,8 +147,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://rayague.github.io/amas-precision/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://rayague.github.io/amas-precision/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/amasPrecision.png"
                   width={500}
@@ -156,11 +156,11 @@ export default function Page() {
                   alt="Amas Precision"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
                   Amas Precision
                 </h2>
                 <h3 className="mx-3 mb-3 font-bold">Mar. 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I managed the development of a website for Amas Precision.
                   This company specializes in statistical analysis. They provide
                   customized data solutions in Cotonou, Benin. The site
@@ -169,50 +169,9 @@ export default function Page() {
                   understanding.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
-          {/* <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 2
-                }
-              }
-            }}
-          >
-            <a href="">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
-                <Image
-                  src="/unavaible.png"
-                  width={500}
-                  height={500}
-                  alt="Oluwatobi Trans"
-                  className="object-cover w-full"
-                />
-                <h2 className="mx-3 mt-2 text-2xl text-white">
-                  Oluwatobi Trans
-                </h2>
-                <h3 className="mx-3 mb-3 font-bold">Apr. 2024</h3>
-                <p className="p-3">
-                  I developed a website for Oluwatobi Trans. My friend in the
-                  transit industry requested this project. The goal was to
-                  create an online platform to showcase his achievements. The
-                  site enhances his visibility on the internet. I designed a
-                  user-friendly interface that highlights his services. This
-                  website serves as a tool to attract new customers.
-                </p>
-              </div>
-            </a>
-          </motion.div> */}
 
           <motion.div
             initial="hidden"
@@ -231,8 +190,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://rayague.github.io/fadoul-global-industry/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://rayague.github.io/fadoul-global-industry/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/fadoolGlobal.jpeg"
                   width={500}
@@ -240,11 +199,11 @@ export default function Page() {
                   alt="Fadoul Global Industry"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
                   Fadoul Global Industry
                 </h2>
                 <h3 className="mx-3 mb-3 font-bold">Apr. 2024</h3>April
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I developed a website for Fadoul Global Industry at the
                   request of a friend. The goal was to present his company and
                   its operations. The website highlights the services offered by
@@ -253,50 +212,10 @@ export default function Page() {
                   visibility.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
-          {/* <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 3.2
-                }
-              }
-            }}
-          >
-            <a href="">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
-                <Image
-                  src="/unavaible.png"
-                  width={500}
-                  height={500}
-                  alt="Le Digitalemaster"
-                  className="object-cover w-full"
-                />
-                <h2 className="mx-3 mt-2 text-2xl text-white">
-                  Le Digitalemaster
-                </h2>
-                <h3 className="mx-3 mb-3 font-bold">Mar. 2024</h3>
-                <p className="p-3">
-                  I am currently working on the Le Digitalemaster project. This
-                  project is in progress at the request of an individual. The
-                  aim is to provide online services for students. It will help
-                  students find courses and access other resources. The goal is
-                  to create a comprehensive platform that meets the needs of
-                  learners.
-                </p>
-              </div>
-            </a>
-          </motion.div> */}
+
 
           <motion.div
             initial="hidden"
@@ -315,8 +234,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://rayague.github.io/OnlineCvRayAgueEn/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://rayague.github.io/OnlineCvRayAgueEn/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/CVen.png"
                   width={500}
@@ -324,9 +243,9 @@ export default function Page() {
                   alt="My CV"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">My CV</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">My CV</h2>
                 <h3 className="mx-3 mb-3 font-bold">Jul. 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I coded my CV using HTML and CSS. This project was done to
                   evaluate my programming skills. I aim to create a
                   well-structured and appealing CV. I still have some basics to
@@ -334,7 +253,7 @@ export default function Page() {
                   enhance my web development abilities.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             initial="hidden"
@@ -353,8 +272,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="/https://portfolio-cnkp.vercel.app">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="/https://portfolio-cnkp.vercel.app">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/portfolioRay.png "
                   width={500}
@@ -362,9 +281,9 @@ export default function Page() {
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">My Portfolio</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">My Portfolio</h2>
                 <h3 className="mx-3 mb-3 font-bold">Aug. 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I am working on my portfolio website again, this time using a
                   framework. The goal is to present my activities and projects
                   more effectively. This project allows me to showcase my skills
@@ -372,7 +291,7 @@ export default function Page() {
                   engaging user experience and highlight my work.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -392,8 +311,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="/https://prototype-self.vercel.app/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="/https://prototype-self.vercel.app/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/prototype.png "
                   width={500}
@@ -401,9 +320,9 @@ export default function Page() {
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">Prototype</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Prototype</h2>
                 <h3 className="mx-3 mb-3 font-bold">Aug. 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I am working on my portfolio website again, this time using a
                   framework. The goal is to present my activities and projects
                   more effectively. This project allows me to showcase my skills
@@ -411,7 +330,7 @@ export default function Page() {
                   engaging user experience and highlight my work.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             initial="hidden"
@@ -430,8 +349,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://rayague.github.io/vroc-creation/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://rayague.github.io/vroc-creation/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/vrocCreation.jpeg"
                   width={500}
@@ -439,9 +358,9 @@ export default function Page() {
                   alt="vroc-creation"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">VROC-CREATION</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">VROC-CREATION</h2>
                 <h3 className="mx-3 mb-3 font-bold">Oct - 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   As the lead developer at VROC-CRÉATION, I was responsible for
                   the development and design of our website. I closely
                   collaborated with the team to ensure that every element of the
@@ -450,7 +369,7 @@ export default function Page() {
                   creativity.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -470,8 +389,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://dossoumarcel.vercel.app/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://dossoumarcel.vercel.app/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/doctor.png"
                   width={500}
@@ -479,9 +398,9 @@ export default function Page() {
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">Portfolio</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Portfolio</h2>
                 <h3 className="mx-3 mb-3 font-bold">Dec - 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   I had the privilege of designing and developing a personalized
                   portfolio website for a distinguished doctor. The project was
                   focused on creating an elegant, user-friendly platform that
@@ -492,7 +411,7 @@ export default function Page() {
                   seamless and informative experience.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -512,8 +431,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://appli.successco.africa/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://appli.successco.africa/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/succesSco.png"
                   width={500}
@@ -521,9 +440,9 @@ export default function Page() {
                   alt="Succesco"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">SuccèsSco</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">SuccèsSco</h2>
                 <h3 className="mx-3 mb-3 font-bold">Dec - 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   SuccèsSco is a web application developed for Révélateur SA
                   Bénin, aimed at providing parents with a platform to track and
                   monitor their children&apos;s academic progress. I had the
@@ -535,7 +454,7 @@ export default function Page() {
                   important educational tool.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             initial="hidden"
@@ -554,8 +473,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="https://tipiac-agency.vercel.app/">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="https://tipiac-agency.vercel.app/">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/tourism.png"
                   width={500}
@@ -563,11 +482,11 @@ export default function Page() {
                   alt="Tourism"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
                   Tourism Tipiac-Agency
                 </h2>
                 <h3 className="mx-3 mb-3 font-bold">Jan - 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   Tourism Tipiac-Agency is a website I developed for a group of
                   students who wanted to present an exhibition on the
                   &quote;Road of Fish&quote;. The project was time-sensitive, so
@@ -578,7 +497,7 @@ export default function Page() {
                   will undoubtedly see updates in the near future.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             initial="hidden"
@@ -597,8 +516,8 @@ export default function Page() {
               }
             }}
           >
-            <a href="">
-              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600/60 ">
+            <Link href="">
+              <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/laundgram.png"
                   width={500}
@@ -606,9 +525,9 @@ export default function Page() {
                   alt="vroc-creation"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-2xl text-white">Laundgram</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Laundgram</h2>
                 <h3 className="mx-3 mb-3 font-bold">Feb - 2024</h3>
-                <p className="p-3">
+                <p className="p-3 text-lg text-white leading-relaxed">
                   Laundgram is a web application designed by me for managing
                   laundry services. It allows users to generate accurate
                   invoices, send them via WhatsApp for quick payments, and track
@@ -619,14 +538,14 @@ export default function Page() {
                   by the end of March 2024.
                 </p>
               </div>
-            </a>
+            </Link>
           </motion.div>
         </div>
         <section class="mb-8 p-6 duration-100 delay-150 bg-slate-900/50 rounded-lg shadow-lg w-full mx-auto hover:bg-slate-600/60 shadow-slate-800/50 hover:-translate-y-1 hover:scale-100">
-          <h2 class="text-3xl text-white font-semibold text-center mb-6">
+          <h2 class="text-4xl text-white font-semibold text-start mb-6">
             My Journey and Continuous Growth
           </h2>
-          <p class="text-lg text-white leading-relaxed">
+          <p class="text-xl text-white leading-relaxed">
             Throughout my university studies, I focused primarily on web
             technologies, which led me to work on numerous projects. While I
             still don&apos;t consider myself an expert in web development, this
@@ -641,46 +560,46 @@ export default function Page() {
         </section>
       </div>
       <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
-        <a
+        <Link
           href="https://www.facebook.com/profile.php?id=100084755843013"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faFacebook} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faInstagram} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white "
         >
           <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://wa.me/22960932967"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/rayague"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white"
         >
           <FontAwesomeIcon className="size-8" icon={faGithub} />
-        </a>
+        </Link>
       </div>
       <p className="mt-4 mb-8 text-sm text-center text-white">
         © copyright -{" "}

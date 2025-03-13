@@ -62,7 +62,7 @@ export default function Home() {
               }
             }}
           >
-            <p className="text-center text-slate-300/75 text-base/6">
+            <p className="text-center text-xl text-white leading-relaxed">
               Explore my projects and journey. I&lsquo;m excited to share my
               work with you!
             </p>

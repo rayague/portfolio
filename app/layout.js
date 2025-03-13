@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from 'next/head';
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,11 @@ export default function RootLayout({ children }) {
         <meta property="og:site_name" content={metadata.title} />
         <meta name="twitter:card" content="summary_large_image" />
         <title>{metadata.title}</title>
-        <link rel="icon" href="/web.png" type="image/png" />
+        <Link rel="shortcut icon" href="/web.png" type="image/x-icon" />
+        <Link rel="shortcut icon" href="/web.png" type="image/x-icon"></Link>
+        <link rel="shortcut icon" href="/web.png" type="image/x-icon" />
+        
+        
       </Head>
       <body className={inter.className}>{children}</body>
     </html>

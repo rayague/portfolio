@@ -203,7 +203,7 @@ export default function Page() {
               }
             }}
           >
-            <h1 className="text-5xl font-black text-gray-50">Posts</h1>
+            <h1 className="text-6xl font-black text-gray-50">Posts</h1>
           </motion.div>
 
           <motion.div
@@ -223,7 +223,7 @@ export default function Page() {
               }
             }}
           >
-            <p className="text-lg text-white/75">
+            <p className="text-xl text-white leading-relaxed">
               Welcome to the posts page! Here, I share insights, ideas, and
               experiences that nurture our growth and creativity. Join me as we
               explore various themes, reflect on the challenges we face, and
@@ -341,46 +341,46 @@ export default function Page() {
       </button> */}
 
         <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
-          <a
+          <Link
             href="https://www.facebook.com/profile.php?id=100084755843013"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white "
           >
             <FontAwesomeIcon className="size-8" icon={faFacebook} />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
             target="_blank"
             rel="noopener noreferrer"
             className="text-white "
           >
             <FontAwesomeIcon className="size-8" icon={faInstagram} />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white "
           >
             <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://wa.me/22960932967"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
           >
             <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://github.com/rayague"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
           >
             <FontAwesomeIcon className="size-8" icon={faGithub} />
-          </a>
+          </Link>
         </div>
       </div>
       <p className="mt-4 mb-8 text-sm text-center text-white">
