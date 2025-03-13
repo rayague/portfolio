@@ -9,7 +9,10 @@ export const metadata = {
   title: "Ray Ague - Portfolio",
   description: "Welcome to Ray Ague's portfolio, a passionate and creative web developer. Explore my innovative projects and skills in front-end and back-end development, and discover how I transform ideas into effective digital solutions. My portfolio showcases my achievements, technical expertise, and ability to tackle challenges to create modern and tailored web experiences.",
   author: "Ray Ague",
-  keywords: "Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, Ague, RAY, AGUE, RAY AGUE, nextJS, Motivation, motivation, MOTIVATION, nextjs, NEXTJS, Portfolio, PORTFOLIO, Projects, projects, PROJECTS, project, projets, Projet portfolio, web developer, projects, IT, software, development, developer, développement web"
+  keywords: "Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, Ague, RAY, AGUE, RAY AGUE, nextJS, Motivation, motivation, MOTIVATION, nextjs, NEXTJS, Portfolio, PORTFOLIO, Projects, projects, PROJECTS, project, projets, Projet portfolio, web developer, projects, IT, software, development, developer, développement web",
+  icons: {
+    icon: '/web.ico',
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -32,9 +35,6 @@ export default function RootLayout({ children }) {
         <meta property="og:site_name" content={metadata.title} />
         <meta name="twitter:card" content="summary_large_image" />
         <title>{metadata.title}</title>
-        <Link rel="shortcut icon" href="/web.png" type="image/x-icon" />
-        <Link rel="shortcut icon" href="/web.png" type="image/x-icon"></Link>
-        <link rel="shortcut icon" href="/web.png" type="image/x-icon" />
         
         
       </Head>
