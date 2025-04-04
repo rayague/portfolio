@@ -12,7 +12,7 @@ import {
   faInstagram,
   faLinkedin,
   faWhatsapp,
-  faGithub
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Page() {
@@ -50,15 +50,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 0.3
-                }
-              }
+                  delay: 0.3,
+                },
+              },
             }}
           >
             <h1 className="text-6xl font-black text-gray-50">Projects</h1>
@@ -70,18 +70,18 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 0.8
-                }
-              }
+                  delay: 0.8,
+                },
+              },
             }}
           >
-            <p className="text-xl text-white leading-relaxed">
+            <p className="text-xl leading-relaxed text-white">
               Every project is an opportunity to explore, innovate, and create
               something meaningful. I&apos;m passionate about bringing ideas to
               life and sharing my vision through unique and impactful work.
@@ -97,15 +97,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 1.2
-                }
-              }
+                  delay: 1.2,
+                },
+              },
             }}
           >
             <Link href="https://rayague.github.io/simpleFolio/">
@@ -117,9 +117,11 @@ export default function Page() {
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Portfolio</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  Portfolio
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Apr. 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I created a personal portfolio to enhance my programming
                   skills. This project allowed me to explore various web
                   development techniques. The portfolio showcases my creativity
@@ -136,15 +138,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 1.6
-                }
-              }
+                  delay: 1.6,
+                },
+              },
             }}
           >
             <Link href="https://rayague.github.io/amas-precision/">
@@ -160,7 +162,7 @@ export default function Page() {
                   Amas Precision
                 </h2>
                 <h3 className="mx-3 mb-3 font-bold">Mar. 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I managed the development of a website for Amas Precision.
                   This company specializes in statistical analysis. They provide
                   customized data solutions in Cotonou, Benin. The site
@@ -172,22 +174,21 @@ export default function Page() {
             </Link>
           </motion.div>
 
-
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.4
-                }
-              }
+                  delay: 2.4,
+                },
+              },
             }}
           >
             <Link href="https://rayague.github.io/fadoul-global-industry/">
@@ -203,7 +204,7 @@ export default function Page() {
                   Fadoul Global Industry
                 </h2>
                 <h3 className="mx-3 mb-3 font-bold">Apr. 2024</h3>April
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I developed a website for Fadoul Global Industry at the
                   request of a friend. The goal was to present his company and
                   its operations. The website highlights the services offered by
@@ -215,23 +216,21 @@ export default function Page() {
             </Link>
           </motion.div>
 
-
-
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 3.6
-                }
-              }
+                  delay: 3.6,
+                },
+              },
             }}
           >
             <Link href="https://rayague.github.io/OnlineCvRayAgueEn/">
@@ -243,9 +242,11 @@ export default function Page() {
                   alt="My CV"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">My CV</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  My CV
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Jul. 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I coded my CV using HTML and CSS. This project was done to
                   evaluate my programming skills. I aim to create a
                   well-structured and appealing CV. I still have some basics to
@@ -261,29 +262,31 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 4
-                }
-              }
+                  delay: 4,
+                },
+              },
             }}
           >
             <Link href="/https://portfolio-cnkp.vercel.app">
               <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
-                  src="/portfolioRay.png "
+                  src="/portfolioRay.png"
                   width={500}
                   height={500}
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">My Portfolio</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  My Portfolio
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Aug. 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I am working on my portfolio website again, this time using a
                   framework. The goal is to present my activities and projects
                   more effectively. This project allows me to showcase my skills
@@ -300,29 +303,31 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 4
-                }
-              }
+                  delay: 4,
+                },
+              },
             }}
           >
             <Link href="/https://prototype-self.vercel.app/">
               <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
-                  src="/prototype.png "
+                  src="/prototype.png"
                   width={500}
                   height={500}
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Prototype</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  Prototype
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Aug. 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I am working on my portfolio website again, this time using a
                   framework. The goal is to present my activities and projects
                   more effectively. This project allows me to showcase my skills
@@ -338,15 +343,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8
-                }
-              }
+                  delay: 2.8,
+                },
+              },
             }}
           >
             <Link href="https://rayague.github.io/vroc-creation/">
@@ -358,9 +363,11 @@ export default function Page() {
                   alt="vroc-creation"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">VROC-CREATION</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  VROC-CREATION
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Oct - 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   As the lead developer at VROC-CRÉATION, I was responsible for
                   the development and design of our website. I closely
                   collaborated with the team to ensure that every element of the
@@ -378,15 +385,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8
-                }
-              }
+                  delay: 2.8,
+                },
+              },
             }}
           >
             <Link href="https://dossoumarcel.vercel.app/">
@@ -398,9 +405,11 @@ export default function Page() {
                   alt="Portfolio"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Portfolio</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  Portfolio
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Dec - 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   I had the privilege of designing and developing a personalized
                   portfolio website for a distinguished doctor. The project was
                   focused on creating an elegant, user-friendly platform that
@@ -420,15 +429,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8
-                }
-              }
+                  delay: 2.8,
+                },
+              },
             }}
           >
             <Link href="https://appli.successco.africa/">
@@ -440,9 +449,11 @@ export default function Page() {
                   alt="Succesco"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">SuccèsSco</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  SuccèsSco
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Dec - 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   SuccèsSco is a web application developed for Révélateur SA
                   Bénin, aimed at providing parents with a platform to track and
                   monitor their children&apos;s academic progress. I had the
@@ -462,15 +473,15 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8
-                }
-              }
+                  delay: 2.8,
+                },
+              },
             }}
           >
             <Link href="https://tipiac-agency.vercel.app/">
@@ -486,7 +497,7 @@ export default function Page() {
                   Tourism Tipiac-Agency
                 </h2>
                 <h3 className="mx-3 mb-3 font-bold">Jan - 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   Tourism Tipiac-Agency is a website I developed for a group of
                   students who wanted to present an exhibition on the
                   &quote;Road of Fish&quote;. The project was time-sensitive, so
@@ -505,18 +516,18 @@ export default function Page() {
             variants={{
               hidden: {
                 scale: 1,
-                opacity: 0
+                opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: 2.8
-                }
-              }
+                  delay: 2.8,
+                },
+              },
             }}
           >
-            <Link href="">
+            <Link href="https://laundgram.vercel.app" target="_blank">
               <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/laundgram.png"
@@ -525,9 +536,11 @@ export default function Page() {
                   alt="vroc-creation"
                   className="object-cover w-full"
                 />
-                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">Laundgram</h2>
+                <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
+                  Laundgram
+                </h2>
                 <h3 className="mx-3 mb-3 font-bold">Feb - 2024</h3>
-                <p className="p-3 text-lg text-white leading-relaxed">
+                <p className="p-3 text-lg leading-relaxed text-white">
                   Laundgram is a web application designed by me for managing
                   laundry services. It allows users to generate accurate
                   invoices, send them via WhatsApp for quick payments, and track
