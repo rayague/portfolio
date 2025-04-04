@@ -496,7 +496,7 @@ export default function Page() {
                 <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
                   Tourism Tipiac-Agency
                 </h2>
-                <h3 className="mx-3 mb-3 font-bold">Jan - 2024</h3>
+                <h3 className="mx-3 mb-3 font-bold">Jan - 2025</h3>
                 <p className="p-3 text-lg leading-relaxed text-white">
                   Tourism Tipiac-Agency is a website I developed for a group of
                   students who wanted to present an exhibition on the
@@ -539,7 +539,7 @@ export default function Page() {
                 <h2 className="mx-3 mt-2 text-4xl font-semibold text-white">
                   Laundgram
                 </h2>
-                <h3 className="mx-3 mb-3 font-bold">Feb - 2024</h3>
+                <h3 className="mx-3 mb-3 font-bold">Ma - 2025</h3>
                 <p className="p-3 text-lg leading-relaxed text-white">
                   Laundgram is a web application designed by me for managing
                   laundry services. It allows users to generate accurate
