@@ -273,7 +273,7 @@ export default function Page() {
               },
             }}
           >
-            <Link href="/https://portfolio-cnkp.vercel.app">
+            <Link href="https://portfolio-cnkp.vercel.app">
               <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/portfolioRay.png"
@@ -314,7 +314,7 @@ export default function Page() {
               },
             }}
           >
-            <Link href="/https://prototype-self.vercel.app/">
+            <Link href="https://prototype-self.vercel.app/">
               <div className="w-auto h-auto duration-100 delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
                 <Image
                   src="/prototype.png"
