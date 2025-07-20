@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,6 +29,69 @@ export default function Page() {
   const router = useRouter();
   const handleBack = () => {
     router.back();
+  };
+
+  // Animation variants pour une meilleure cohérence
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const headerVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -20
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const socialVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      scale: 1.1,
+      y: -5,
+      transition: {
+        duration: 0.2
+      }
+    }
   };
 
   const posts = [
@@ -134,165 +198,262 @@ export default function Page() {
   ];
 
   return (
-    <main className="flex flex-col items-center min-h-screen font-sans transition ease-in bg-slate-950">
-      <div className="flex flex-row items-center justify-between w-full h-auto gap-6 px-3 py-6 mb-5 shadow-2xl backdrop-blur-md bg-white/5 sm:px-5 lg:px-20 md:px-10 ">
-        <button
-          onClick={handleBack}
-          className="text-4xl font-black text-gray-50"
-        >
-          &larr;
-        </button>
-        <nav className="flex flex-row justify-end gap-4 font-extrabold text-gray-200 decoration-none text-md/6 ">
-          <Link href="/home" className="hover:text-gray-50">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:text-gray-50">
-            Projects
-          </Link>
-          <Link href="/contact" className="hover:text-gray-50">
-            Contact
-          </Link>
-        </nav>
-      </div>
-      <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
-        <div className="flex flex-col w-full h-auto gap-6 my-11">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.3
-                }
-              }
-            }}
-          >
-            <h1 className="text-6xl font-black text-gray-50">Blog</h1>
+    <motion.main 
+      className="flex flex-col items-center min-h-screen font-sans bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      {/* Modern Navbar */}
+      <Navbar />
+      
+      {/* Content with top padding for fixed navbar */}
+            <div className="w-full pt-20 sm:pt-24">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+        <motion.div className="flex flex-col w-full h-auto gap-8 my-16" variants={itemVariants}>
+          <motion.div variants={itemVariants}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-400 hover:to-pink-400 transition-all duration-500">
+              Blog
+            </h1>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.8
-                }
-              }
-            }}
-          >
-            <p className="text-xl text-white leading-relaxed">
+          <motion.div variants={itemVariants}>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed hover:text-white transition-colors duration-500 max-w-4xl">
               In a world full of stories, I strive to share insights and
               experiences that inspire growth and creativity. Join me as we
               explore ideas, reflect on challenges, and celebrate the journey of
-              learning together.{" "}
+              learning together.
             </p>
           </motion.div>
-        </div>
 
-        <div className="w-full h-px my-16 bg-gray-800"></div>
-        <div className="container flex flex-row gap-6 text-white "></div>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 1,
-              opacity: 0
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                delay: 1.4
-              }
-            }
-          }}
-        >
-          <div className="grid grid-cols-1 gap-8 pb-40 sm:grid-cols-2 lg:grid-cols-3 text-white/65">
-            {posts.map((post) => (
-              <Link key={post.id} href={`/posts/${post.id}`}>
-                <div className="w-auto h-auto duration-100 delay-150 border shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 hover:-translate-y-3 hover:scale-100 hover:bg-slate-600/60 ">
-                  <Image
-                    src={post.image}
-                    width={500}
-                    height={500}
-                    alt="Picture"
-                    className="object-cover w-full rounded-t-xl"
-                  />
-                  <h2 className="mx-3 mt-2 text-2xl text-white">
-                    Posted by :{" "}
-                    <span className="text-3xl font-bold tracking-tighter ">
-                      {post.author}{" "}
-                    </span>
-                  </h2>
-                  <h3 className="mx-3 mb-3 font-bold">{post.date}</h3>
-                  <p className="p-3">{post.content} ... see more.</p>
-                </div>
-              </Link>
+          {/* Decorative Elements */}
+          <motion.div 
+            className="flex items-center space-x-4 mt-8"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                delay: 0.5,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="w-3 h-3 bg-gradient-to-r from-pink-400 to-red-500 rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                delay: 1,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          className="w-full h-px my-16 bg-gradient-to-r from-transparent via-gray-600 to-transparent"
+          variants={itemVariants}
+        ></motion.div>
+        <motion.div variants={itemVariants}>
+          <motion.div className="grid grid-cols-1 gap-6 sm:gap-8 pb-16 sm:pb-20 md:pb-32 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5" variants={itemVariants}>
+            {posts.map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {
+                    scale: 0.8,
+                    opacity: 0,
+                    y: 50,
+                  },
+                  visible: {
+                    scale: 1,
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      delay: index * 0.1,
+                      ease: "easeOut"
+                    },
+                  },
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <Link href={`/posts/${post.id}`}>
+                  <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/20 to-slate-800/20 border border-white/10 backdrop-blur-sm hover:from-slate-800/30 hover:to-slate-700/30 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20">
+                    {/* Background glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Image container */}
+                    <div className="relative overflow-hidden rounded-t-2xl">
+                      <Image
+                        src={post.image}
+                        width={500}
+                        height={500}
+                        alt="Blog Post"
+                        className="object-cover w-full h-48 transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Image overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-purple-400 transition-all duration-300">
+                          {post.title}
+                        </h2>
+                        <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full border border-blue-500/30">
+                          {post.date}
+                        </span>
+                      </div>
+                      
+                      <div className="mb-3">
+                        <span className="text-sm text-gray-400">Posted by: </span>
+                        <span className="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors duration-300">
+                          {post.author}
+                        </span>
+                      </div>
+                      
+                      <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300 text-sm line-clamp-3">
+                        {post.content}
+                      </p>
+                      
+                      {/* Read more indicator */}
+                      <div className="flex items-center mt-4">
+                        <span className="text-xs text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                          Read more
+                        </span>
+                        <motion.div
+                          className="ml-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300"
+                          initial={{ x: 0 }}
+                          whileHover={{ x: 5 }}
+                        >
+                          →
+                        </motion.div>
+                      </div>
+                    </div>
+                    
+                    {/* Hover effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
-      <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
-       <Link
-          href="https://www.facebook.com/profile.php?id=100084755843013"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white "
+      <motion.div 
+        className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 sm:gap-4 p-4 sm:p-6"
+        variants={itemVariants}
+      >
+        <motion.div
+          variants={socialVariants}
+          whileHover="hover"
         >
-          <FontAwesomeIcon className="size-8" icon={faFacebook} />
-        </Link>
-       <Link
-          href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white "
+          <Link
+            href="https://www.facebook.com/profile.php?id=100084755843013"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faFacebook} />
+          </Link>
+        </motion.div>
+        
+        <motion.div
+          variants={socialVariants}
+          whileHover="hover"
         >
-          <FontAwesomeIcon className="size-8" icon={faInstagram} />
-        </Link>
-       <Link
-          href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white "
+          <Link
+            href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-600 to-purple-700 rounded-full hover:from-pink-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faInstagram} />
+          </Link>
+        </motion.div>
+        
+        <motion.div
+          variants={socialVariants}
+          whileHover="hover"
         >
-          <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-        </Link>
-       <Link
-          href="https://wa.me/22960932967"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white"
+          <Link
+            href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-700 to-blue-800 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faLinkedin} />
+          </Link>
+        </motion.div>
+        
+        <motion.div
+          variants={socialVariants}
+          whileHover="hover"
         >
-          <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-        </Link>
-       <Link
-          href="https://github.com/rayague"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white"
+          <Link
+            href="https://wa.me/22960932967"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full hover:from-green-500 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faWhatsapp} />
+          </Link>
+        </motion.div>
+        
+        <motion.div
+          variants={socialVariants}
+          whileHover="hover"
         >
-          <FontAwesomeIcon className="size-8" icon={faGithub} />
-        </Link>
-      </div>
-      <p className="mt-4 mb-8 text-sm text-center text-white">
+          <Link
+            href="https://github.com/rayague"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full hover:from-gray-600 hover:to-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faGithub} />
+          </Link>
+        </motion.div>
+      </motion.div>
+      <motion.p 
+        className="mt-4 mb-8 text-xs sm:text-sm text-center text-gray-400"
+        variants={itemVariants}
+      >
         © copyright -{" "}
-        <Link href="https://portfolio-cnkp.vercel.app">Ray Ague</Link> All
-        rights reserved.
-      </p>
-    </main>
+        <Link href="https://portfolio-cnkp.vercel.app" className="hover:text-gray-300 transition-colors duration-300">
+          Ray Ague
+        </Link> All rights reserved.
+      </motion.p>
+      </div>
+    </motion.main>
   );
 }

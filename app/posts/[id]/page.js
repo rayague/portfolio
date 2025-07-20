@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import Navbar from "../../components/Navbar";
 
 import {
   faCoffee,
@@ -161,233 +162,310 @@ export default function Page() {
   }
 
   return (
-    <div className="flex flex-col items-center min-h-screen font-sans transition ease-in bg-slate-950">
-      <div className="flex flex-row items-center justify-between w-full h-auto gap-6 px-3 py-6 mb-5 shadow-2xl backdrop-blur-md bg-white/5 sm:px-5 lg:px-20 md:px-10 ">
-        <button
+    <motion.main 
+      className="flex flex-col items-center min-h-screen font-sans bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { 
+          opacity: 1,
+          transition: { duration: 0.6 }
+        }
+      }}
+    >
+      {/* Modern Navbar */}
+      <Navbar />
+      
+      {/* Back Button */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-4">
+        <motion.button
           onClick={handleBack}
-          className="text-4xl font-black text-gray-50"
+          className="flex items-center gap-2 text-lg font-semibold text-gray-300 hover:text-blue-400 transition-colors duration-300 group"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          &larr;
-        </button>
-        <nav className="flex flex-row justify-end gap-4 font-extrabold text-gray-200 decoration-none text-md/6 ">
-          <Link href="/home" className="hover:text-gray-50">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:text-gray-50">
-            Projects
-          </Link>
-          <Link href="/contact" className="hover:text-gray-50">
-            Contact
-          </Link>
-          <Link href="/blog" className="hover:text-gray-50">
-            Blog
-          </Link>
-        </nav>
-      </div>
-      <div className="container px-5 sm:px-8 md:px-12 xl:px24 2xl:px44 lg:px16">
-        <div className="flex flex-col w-full h-auto gap-6 my-11">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.3
-                }
-              }
-            }}
+          <motion.span
+            className="text-2xl group-hover:-translate-x-1 transition-transform duration-300"
           >
-            <h1 className="text-6xl font-black text-gray-50">Posts</h1>
+            &larr;
+          </motion.span>
+          <span>Retour aux articles</span>
+        </motion.button>
+      </div>
+
+      {/* Content with full width */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+        {/* Header Section */}
+        <motion.div 
+          className="flex flex-col w-full h-auto gap-8 my-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-400 hover:to-pink-400 transition-all duration-500">
+              Article
+            </h1>
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                scale: 1,
-                opacity: 0
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.8
-                }
-              }
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-xl text-white leading-relaxed">
-              Welcome to the posts page! Here, I share insights, ideas, and
-              experiences that nurture our growth and creativity. Join me as we
-              explore various themes, reflect on the challenges we face, and
-              celebrate our learning journey together.
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed hover:text-white transition-colors duration-500 max-w-4xl">
+              Plongez dans mes réflexions et partagez avec moi ce voyage d&apos;apprentissage et de découverte.
             </p>
           </motion.div>
-        </div>
-        <div className="w-full h-px my-16 bg-gray-800"></div>
-        <div className="container grid items-center justify-center w-full grid-cols-1 pb-40 text-white/65">
-          <div className="w-full h-auto p-5 mx-auto delay-150 shadow-2xl bg-slate-900/60 rounded-xl shadow-slate-800/50 ">
+
+          {/* Decorative Elements */}
+          <motion.div 
+            className="flex items-center space-x-4 mt-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  scale: 1,
-                  opacity: 0
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 1.2
-                  }
-                }
+              className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
               }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                delay: 0.5,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="w-3 h-3 bg-gradient-to-r from-pink-400 to-red-500 rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                delay: 1,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.div>
+        </motion.div>
+
+        {/* Separator */}
+        <motion.div 
+          className="w-full h-px my-16 bg-gradient-to-r from-transparent via-gray-600 to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        />
+
+        {/* Article Content */}
+        <motion.div 
+          className="w-full pb-40"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900/20 to-slate-800/20 border border-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500">
+            {/* Background glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            {/* Image Section */}
+            <motion.div 
+              className="relative overflow-hidden rounded-t-3xl"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
             >
               <Image
                 src={post.image}
-                width={500}
-                height={500}
-                alt="Picture"
-                className="object-cover mx-auto mb-5 lg:w-1/2 md:w-full sm:w-full rounded-t-xl"
+                width={800}
+                height={400}
+                alt="Article Image"
+                className="object-cover w-full h-64 sm:h-80 md:h-96 lg:h-[500px] transition-transform duration-700 group-hover:scale-105"
               />
+              {/* Image overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
 
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  scale: 1,
-                  opacity: 0
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 1.6
-                  }
-                }
-              }}
-            >
-              <h1 className="mb-4 text-3xl font-bold tracking-tighter">
-                {post.formFirstName} {post.formLastName}
-              </h1>
-            </motion.div>
+            {/* Article Header */}
+            <div className="p-8 sm:p-10 lg:p-12">
+              <motion.div
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.6 }}
+              >
+                <div>
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-purple-400 transition-all duration-300 mb-2">
+                    {post.formFirstName} {post.formLastName}
+                  </h1>
+                  <div className="flex items-center gap-3">
+                    <span className="px-4 py-2 text-sm font-semibold bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full border border-blue-500/30">
+                      {new Date(post.postDate).toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </span>
+                    <span className="text-sm text-gray-400">•</span>
+                    <span className="text-sm text-gray-400">Article personnel</span>
+                  </div>
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  scale: 1,
-                  opacity: 0
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 2
-                  }
-                }
-              }}
-            >
-              <h2 className="mb-2 text-xl">
-                Posté le : {new Date(post.postDate).toLocaleDateString()}
-              </h2>
-            </motion.div>
+              {/* Article Content */}
+              <motion.div
+                className="prose prose-lg prose-invert max-w-none"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.8 }}
+              >
+                <div className="text-gray-300 leading-relaxed text-lg sm:text-xl space-y-6">
+                  {post.formThoughts.split('\n\n').map((paragraph, index) => (
+                    <motion.p
+                      key={index}
+                      className="text-gray-300 leading-relaxed text-lg sm:text-xl group-hover:text-white transition-colors duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 2 + (index * 0.1),
+                        ease: "easeOut"
+                      }}
+                    >
+                      {paragraph}
+                    </motion.p>
+                  ))}
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  scale: 1,
-                  opacity: 0
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 2.4
-                  }
-                }
-              }}
-            >
-              <p className="mx-3 mb-4 text-xl font-base">{post.formThoughts}</p>
-            </motion.div>
+              {/* Reading Progress Indicator */}
+              <motion.div
+                className="mt-12 pt-8 border-t border-gray-700/50"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 2.5 }}
+              >
+                <div className="flex items-center justify-between text-sm text-gray-400">
+                  <span>Fin de l&apos;article</span>
+                  <span>Merci de votre lecture</span>
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* <h1 className="mb-4 text-3xl font-bold">
-        {post.formFirstName} {post.formLastName}
-      </h1>
-      <h2 className="mb-2 text-xl">
-        Posté le : {new Date(post.postDate).toLocaleDateString()}
-      </h2>
-      <p className="mb-4">{post.formThoughts}</p>
-      <button
-        onClick={() => router.back()}
-        className="px-4 py-2 mt-4 text-white bg-blue-500 rounded"
-      >
-        Retour
-      </button> */}
-
-        <div className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 p-3 ">
-          <Link
-            href="https://www.facebook.com/profile.php?id=100084755843013"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white "
+        {/* Social Links */}
+        <motion.div 
+          className="relative bottom-0 flex flex-row items-center justify-center w-full h-auto gap-3 sm:gap-4 p-4 sm:p-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 3 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FontAwesomeIcon className="size-8" icon={faFacebook} />
-          </Link>
-          <Link
-            href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white "
+            <Link
+              href="https://www.facebook.com/profile.php?id=100084755843013"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faFacebook} />
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FontAwesomeIcon className="size-8" icon={faInstagram} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white "
+            <Link
+              href="https://www.instagram.com/rayague03?igsh=MTg3eWNnN2hzdnI0Zg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-600 to-purple-700 rounded-full hover:from-pink-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faInstagram} />
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FontAwesomeIcon className="size-8" icon={faLinkedin} />
-          </Link>
-          <Link
-            href="https://wa.me/22960932967"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white"
+            <Link
+              href="https://www.linkedin.com/in/ray-ague-2066b4247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-700 to-blue-800 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faLinkedin} />
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FontAwesomeIcon className="size-8" icon={faWhatsapp} />
-          </Link>
-          <Link
-            href="https://github.com/rayague"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white"
+            <Link
+              href="https://wa.me/22960932967"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full hover:from-green-500 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faWhatsapp} />
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FontAwesomeIcon className="size-8" icon={faGithub} />
-          </Link>
-        </div>
+            <Link
+              href="https://github.com/rayague"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full hover:from-gray-600 hover:to-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={faGithub} />
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
-      <p className="mt-4 mb-8 text-sm text-center text-white">
+      
+      <motion.p 
+        className="mt-4 mb-8 text-xs sm:text-sm text-center text-gray-400"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 3.2 }}
+      >
         © copyright -{" "}
-        <Link href="https://portfolio-cnkp.vercel.app">Ray Ague</Link> All
-        rights reserved.
-      </p>
-    </div>
+        <Link href="https://portfolio-cnkp.vercel.app" className="hover:text-gray-300 transition-colors duration-300">
+          Ray Ague
+        </Link> All rights reserved.
+      </motion.p>
+    </motion.main>
   );
 }
