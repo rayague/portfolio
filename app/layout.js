@@ -5,6 +5,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL('https://portfolio-cnkp.vercel.app'),
   title: "Ray Ague - Portfolio",
   description: "Welcome to Ray Ague's portfolio, a passionate and creative web developer. Explore my innovative projects and skills in front-end and back-end development, and discover how I transform ideas into effective digital solutions. My portfolio showcases my achievements, technical expertise, and ability to tackle challenges to create modern and tailored web experiences.",
   author: "Ray Ague",

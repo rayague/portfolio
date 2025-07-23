@@ -1,6 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { storage } from "../../firebaseConfig";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-// ... tout le code React et JSX de l'ancienne page form ici ... 
+import React from "react";
+export default function FormClient() {
+  return (
+    <main className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+      <h1 className="text-4xl font-bold text-white mt-24">Form coming soon</h1>
+    </main>
+  );
+} 
