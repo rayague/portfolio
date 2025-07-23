@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faCode, faEnvelope, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faCode, faEnvelope, faBars, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const router = useRouter();
@@ -58,6 +58,7 @@ const Navbar = () => {
   const navItems = [
     { href: "/home", label: "Home", icon: faHome, color: "from-blue-500 to-blue-600" },
     { href: "/projects", label: "Projects", icon: faCode, color: "from-purple-500 to-purple-600" },
+    { href: "/skills", label: "Skills", icon: faUser, color: "from-pink-500 to-pink-600" },
     { href: "/contact", label: "Contact", icon: faEnvelope, color: "from-green-500 to-green-600" },
   ];
 
