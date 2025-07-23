@@ -16,7 +16,7 @@ const skills = [
   { name: "Tailwind CSS", icon: "💨" },
   { name: "Git", icon: "🔗" },
   { name: "Python", icon: "🐍" },
-  { name: "Maîtrise des logiciels de bureau", icon: "💻" },
+  // { name: "Maîtrise des logiciels de bureau", icon: "💻" },
   { name: "Prompt engineering", icon: "🤖" },
 ];
 
