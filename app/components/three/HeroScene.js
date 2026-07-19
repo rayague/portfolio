@@ -1,21 +1,7 @@
 "use client";
-import { Suspense, useRef, useMemo, useState, useEffect } from "react";
+import { Suspense, useRef, useMemo } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-
-function MouseTracker({ children }) {
-  const { pointer } = useThree();
-  const mouseRef = useRef({ current: [0, 0] });
-
-  useEffect(() => {
-    const updateMouse = () => {
-      mouseRef.current.current = [pointer.x, pointer.y];
-    };
-    const interval = setInterval(updateMouse, 50);
-    return () => clearInterval(interval);
-  }, [pointer]);
-
-  return <group>{children}</group>;
-}
+import * as THREE from "three";
 
 function Shapes() {
   const meshRef = useRef(null);
