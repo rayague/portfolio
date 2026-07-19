@@ -1,0 +1,40 @@
+export const siteConfig = {
+  name: "Ray AGUE",
+  title: "Full Stack Developer & Creative Designer",
+  tagline: "Créateur de solutions digitales innovantes",
+  email: "rayague03@gmail.com",
+  phone: "+33 7 58 27 99 07",
+  whatsapp: "33758279907",
+  location: {
+    current: "Corte (20250), Haute-Corse, France",
+    origin: "Abomey-Calavi, Bénin",
+    coordinates: { lat: 42.3035, lng: 9.1495 },
+  },
+  universities: [
+    "Université Pasquale Paoli, Corse",
+    "Université Libre de Bolzano (stage)",
+  ],
+  social: {
+    facebook: "https://www.facebook.com/profile.php?id=100084755843013",
+    instagram: "https://www.instagram.com/rayague03",
+    linkedin: "https://www.linkedin.com/in/ray-ague-2066b4247",
+    whatsapp: "https://wa.me/33758279907",
+    whatsappOld: "https://wa.me/22960932967",
+    github: "https://github.com/rayague",
+  },
+  siteUrl: "https://portfolio-cnkp.vercel.app",
+  locale: "fr_FR",
+  keywords: [
+    "Ray AGUE", "développeur web", "Corse", "Corte", "Haute-Corse",
+    "développeur Corse", "développeur Corte", "full stack",
+    "Université de Corse", "Pasquale Paoli", "Bolzano",
+    "développeur Bénin", "freelance web", "création site internet",
+    "développeur freelance Corse", "web développeur Corte 20250",
+  ],
+  seo: {
+    title: "Ray AGUE - Développeur Web Full Stack à Corte, Corse",
+    titleEn: "Ray AGUE - Full Stack Web Developer in Corte, Corsica",
+    description: "Développeur web full stack basé à Corte (Haute-Corse). Création de sites modernes, applications web et solutions digitales. Formé à l'Université Pasquale Paoli et à l'Université Libre de Bolzano.",
+    descriptionEn: "Full stack web developer based in Corte, Corsica. Modern websites, web applications and digital solutions. Trained at Università Pasquale Paoli and the Free University of Bozen-Bolzano.",
+  },
+};

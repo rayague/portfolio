@@ -1,26 +1,17 @@
 export const metadata = {
-  title: "Accueil - Ray Ague",
-  description: "Bienvenue sur le portfolio de Ray Ague, développeur web passionné. Découvrez ses projets, compétences et solutions digitales innovantes.",
-  keywords: "accueil, portfolio, Ray Ague, ray, ague, ray ague, junior, junior ague, ray junior, Ague, RAY, AGUE, RAY AGUE, nextJS, Motivation, motivation, MOTIVATION, nextjs, NEXTJS, Portfolio, PORTFOLIO, Projects, projects, PROJECTS, project, projets, Projet portfolio, développeur web, projets, compétences, solutions digitales, IT",
+  title: "Ray AGUE - Développeur Web Full Stack à Corte, Corse",
+  description: "Développeur web full stack basé à Corte (Haute-Corse). Création de sites modernes, applications web et solutions digitales. Formé à l'Université Pasquale Paoli.",
+  keywords: "accueil, portfolio, Ray AGUE, développeur web, Corse, Corte, full stack, développement web",
   openGraph: {
-    title: "Accueil - Ray Ague",
-    description: "Bienvenue sur le portfolio de Ray Ague, développeur web passionné. Découvrez ses projets, compétences et solutions digitales innovantes.",
+    title: "Ray AGUE - Développeur Web Full Stack à Corte, Corse",
+    description: "Développeur web full stack basé à Corte (Haute-Corse). Création de sites modernes, applications web et solutions digitales.",
     url: "https://portfolio-cnkp.vercel.app/",
-    siteName: "Ray Ague - Portfolio",
-    images: [
-      {
-        url: "/web.png",
-        width: 1200,
-        height: 630,
-        alt: "Ray Ague Accueil",
-      },
-    ],
+    siteName: "Ray AGUE - Portfolio",
+    images: [{ url: "/web.png", width: 1200, height: 630, alt: "Ray AGUE Accueil" }],
     locale: "fr_FR",
     type: "website",
   },
-  alternates: {
-    canonical: "https://portfolio-cnkp.vercel.app/",
-  },
+  alternates: { canonical: "https://portfolio-cnkp.vercel.app/" },
 };
 
 import HomeClient from "./components/HomeClient";

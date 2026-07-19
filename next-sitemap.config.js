@@ -2,8 +2,6 @@
 module.exports = {
     siteUrl: 'https://portfolio-cnkp.vercel.app',
     generateRobotsTxt: true,
-    // optionnel : exclure certaines pages
-    // exclude: ['/admin'],
+    exclude: ['/blog', '/form', '/home', '/api/*', '/posts/*'],
     outDir: './public',
   };
-  
