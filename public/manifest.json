@@ -3,9 +3,9 @@
   "short_name": "Portfolio",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#18181b",
+  "background_color": "#020617",
   "theme_color": "#6366f1",
-  "description": "Portfolio of Ray Ague, web developer.",
+  "description": "Portfolio of Ray AGUE, software engineer and full stack developer.",
   "icons": [
     {
       "src": "/profile.JPG",

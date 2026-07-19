@@ -22,36 +22,89 @@ html.lenis {
   pointer-events: none;
 }
 
-@layer base {
-  body {
-    cursor: none;
-  }
+/* The native cursor is hidden ONLY when the custom cursor is mounted
+   (fine-pointer devices). Touch devices keep default behavior. */
+html.custom-cursor-active,
+html.custom-cursor-active a,
+html.custom-cursor-active button,
+html.custom-cursor-active [role="button"],
+html.custom-cursor-active input,
+html.custom-cursor-active textarea,
+html.custom-cursor-active select {
+  cursor: none;
+}
 
-  a, button, [role="button"], input, textarea, select {
-    cursor: none;
-  }
+::selection {
+  background: rgba(129, 140, 248, 0.35);
+  color: #fff;
+}
+
+/* Subtle film-grain overlay for depth */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent;
+  }
+  .glass-card {
+    @apply bg-white/[0.03] border border-white/[0.06] backdrop-blur-md;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .animate-float {
@@ -65,6 +118,10 @@ html.lenis {
 .animate-gradient-shift {
   background-size: 200% 200%;
   animation: gradient-shift 4s ease infinite;
+}
+
+.animate-caret {
+  animation: caret-blink 1.1s steps(1) infinite;
 }
 
 ::-webkit-scrollbar {

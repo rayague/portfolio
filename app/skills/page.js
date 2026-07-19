@@ -1,14 +1,15 @@
 export const metadata = {
-  title: "Compétences - Ray AGUE | Développeur Web Full Stack Corse",
-  description: "Découvrez les compétences techniques de Ray AGUE, développeur web full stack basé à Corte : Laravel, Next.js, React, Three.js, Tailwind CSS et plus.",
-  keywords: "compétences, skills, Ray AGUE, développeur, Laravel, Next.js, React, Three.js, Tailwind, Git, Python, développement web, Corse, Corte",
+  title: "Skills",
+  description:
+    "Technical skills of Ray AGUE, software engineer and full stack developer: Laravel, Next.js, React, React Native, Three.js, Tailwind CSS and more.",
   openGraph: {
-    title: "Compétences - Ray AGUE",
-    description: "Découvrez les compétences techniques de Ray AGUE, développeur web full stack basé à Corte.",
+    title: "Skills | Ray AGUE",
+    description:
+      "Technical skills of Ray AGUE, software engineer and full stack developer.",
     url: "https://portfolio-cnkp.vercel.app/skills",
-    siteName: "Ray AGUE - Portfolio",
-    images: [{ url: "/web.png", width: 1200, height: 630, alt: "Ray AGUE Compétences" }],
-    locale: "fr_FR",
+    siteName: "Ray AGUE — Portfolio",
+    images: [{ url: "/web.png", width: 1200, height: 630, alt: "Ray AGUE Skills" }],
+    locale: "en_US",
     type: "website",
   },
   alternates: { canonical: "https://portfolio-cnkp.vercel.app/skills" },

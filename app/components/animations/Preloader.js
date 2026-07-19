@@ -2,51 +2,47 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const NAME = "RAY AGUE";
+
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const hasVisited = sessionStorage.getItem("hasVisited");
-    if (hasVisited) {
-      setIsLoading(false);
-      return;
-    }
+    document.documentElement.style.overflow = "hidden";
+
+    const interval = setInterval(() => {
+      setProgress((p) => {
+        const next = p + Math.random() * 14 + 4;
+        return next >= 100 ? 100 : next;
+      });
+    }, 110);
+
     const timer = setTimeout(() => {
+      setProgress(100);
       setIsLoading(false);
-      sessionStorage.setItem("hasVisited", "true");
-    }, 2500);
-    return () => clearTimeout(timer);
+      document.documentElement.style.overflow = "";
+    }, 2300);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+      document.documentElement.style.overflow = "";
+    };
   }, []);
 
-  const containerVariants = {
-    initial: { opacity: 1 },
-    exit: { opacity: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
-  };
-
-  const textVariants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.3 },
-    },
-  };
-
   const letterVariants = {
-    initial: { opacity: 0, y: 50, rotateX: -90 },
-    animate: {
+    initial: { opacity: 0, y: 60, rotateX: -90 },
+    animate: (i) => ({
       opacity: 1,
       y: 0,
       rotateX: 0,
-      transition: { duration: 0.6, ease: [0.2, 0.65, 0.3, 0.9] },
-    },
-  };
-
-  const barVariants = {
-    initial: { scaleX: 0 },
-    animate: {
-      scaleX: 1,
-      transition: { duration: 1.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] },
-    },
+      transition: {
+        duration: 0.6,
+        delay: 0.15 + i * 0.06,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    }),
   };
 
   return (
@@ -54,44 +50,43 @@ export default function Preloader() {
       {isLoading && (
         <motion.div
           className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-slate-950"
-          variants={containerVariants}
-          initial="initial"
-          exit="exit"
+          initial={{ opacity: 1 }}
+          exit={{
+            y: "-100%",
+            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+          }}
         >
-          <motion.div
-            className="flex items-center gap-2 mb-8"
-            variants={textVariants}
-            initial="initial"
-            animate="animate"
-          >
-            {"RAY AGUE".split("").map((char, i) => (
+          <div className="flex items-center gap-1 sm:gap-2 mb-10 [perspective:600px]">
+            {NAME.split("").map((char, i) => (
               <motion.span
                 key={i}
+                custom={i}
                 variants={letterVariants}
-                className="text-5xl sm:text-7xl md:text-8xl font-black bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                initial="initial"
+                animate="animate"
+                className="font-display text-5xl sm:text-7xl md:text-8xl font-bold bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent"
                 style={{ display: "inline-block" }}
               >
-                {char === " " ? "\u00A0" : char}
+                {char === " " ? " " : char}
               </motion.span>
             ))}
-          </motion.div>
+          </div>
 
-          <div className="w-48 h-[3px] bg-slate-800 rounded-full overflow-hidden">
+          <div className="w-56 h-[2px] bg-slate-800 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full origin-left"
-              variants={barVariants}
-              initial="initial"
-              animate="animate"
+              className="h-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 rounded-full origin-left"
+              animate={{ scaleX: Math.min(progress, 100) / 100 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             />
           </div>
 
           <motion.p
-            className="mt-6 text-sm text-slate-500 tracking-widest uppercase"
+            className="mt-6 font-mono text-sm text-slate-500 tabular-nums tracking-widest"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+            transition={{ delay: 0.4 }}
           >
-            Portfolio
+            {Math.round(Math.min(progress, 100))}%
           </motion.p>
         </motion.div>
       )}

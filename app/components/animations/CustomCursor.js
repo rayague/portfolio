@@ -1,91 +1,123 @@
 "use client";
-import { useEffect, useRef, useCallback } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 
 export default function CustomCursor() {
-  const cursorRef = useRef(null);
-  const cursorRingRef = useRef(null);
+  const [enabled, setEnabled] = useState(false);
+  const [hovering, setHovering] = useState(false);
+  const [pressed, setPressed] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
-  const ringX = useSpring(mouseX, { stiffness: 150, damping: 15 });
-  const ringY = useSpring(mouseY, { stiffness: 150, damping: 15 });
-  const isHoveringRef = useRef(false);
-  const isVisible = useRef(true);
-
-  const handleMouseMove = useCallback((e) => {
-    mouseX.set(e.clientX);
-    mouseY.set(e.clientY);
-    if (cursorRef.current) {
-      cursorRef.current.style.left = `${e.clientX}px`;
-      cursorRef.current.style.top = `${e.clientY}px`;
-    }
-  }, [mouseX, mouseY]);
-
-  const handleMouseLeave = useCallback(() => {
-    isVisible.current = false;
-    if (cursorRef.current) cursorRef.current.style.opacity = "0";
-    if (cursorRingRef.current) cursorRingRef.current.style.opacity = "0";
-  }, []);
-
-  const handleMouseEnter = useCallback(() => {
-    isVisible.current = true;
-    if (cursorRef.current) cursorRef.current.style.opacity = "1";
-    if (cursorRingRef.current) cursorRingRef.current.style.opacity = "1";
-  }, []);
+  const ringX = useSpring(mouseX, { stiffness: 400, damping: 35, mass: 0.6 });
+  const ringY = useSpring(mouseY, { stiffness: 400, damping: 35, mass: 0.6 });
 
   useEffect(() => {
-    document.body.style.cursor = "none";
+    // Only replace the cursor on devices with a precise pointer (mouse/trackpad).
+    const fine = window.matchMedia("(pointer: fine)");
+    if (!fine.matches) return;
 
-    const handleHoverStart = (e) => {
-      if (e.target.closest("a, button, [role=button], input, textarea, select")) {
-        isHoveringRef.current = true;
-        if (cursorRingRef.current) {
-          cursorRingRef.current.style.width = "48px";
-          cursorRingRef.current.style.height = "48px";
-          cursorRingRef.current.style.borderColor = "rgba(99, 102, 241, 0.6)";
-          cursorRingRef.current.style.backgroundColor = "rgba(99, 102, 241, 0.1)";
-        }
-      }
+    setEnabled(true);
+    document.documentElement.classList.add("custom-cursor-active");
+
+    const move = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
-
-    const handleHoverEnd = () => {
-      isHoveringRef.current = false;
-      if (cursorRingRef.current) {
-        cursorRingRef.current.style.width = "32px";
-        cursorRingRef.current.style.height = "32px";
-        cursorRingRef.current.style.borderColor = "rgba(148, 163, 184, 0.5)";
-        cursorRingRef.current.style.backgroundColor = "transparent";
-      }
+    const over = (e) => {
+      const interactive = e.target.closest(
+        "a, button, [role=button], input, textarea, select, [data-cursor=hover]"
+      );
+      setHovering(Boolean(interactive));
     };
+    const down = () => setPressed(true);
+    const up = () => setPressed(false);
+    const leave = () => setHidden(true);
+    const enter = () => setHidden(false);
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseenter", handleMouseEnter);
-    document.addEventListener("mouseover", handleHoverStart);
-    document.addEventListener("mouseout", handleHoverEnd);
+    window.addEventListener("mousemove", move, { passive: true });
+    window.addEventListener("mouseover", over, { passive: true });
+    window.addEventListener("mousedown", down);
+    window.addEventListener("mouseup", up);
+    document.documentElement.addEventListener("mouseleave", leave);
+    document.documentElement.addEventListener("mouseenter", enter);
 
     return () => {
-      document.body.style.cursor = "";
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseenter", handleMouseEnter);
-      document.removeEventListener("mouseover", handleHoverStart);
-      document.removeEventListener("mouseout", handleHoverEnd);
+      document.documentElement.classList.remove("custom-cursor-active");
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseover", over);
+      window.removeEventListener("mousedown", down);
+      window.removeEventListener("mouseup", up);
+      document.documentElement.removeEventListener("mouseleave", leave);
+      document.documentElement.removeEventListener("mouseenter", enter);
     };
-  }, [handleMouseMove, handleMouseLeave, handleMouseEnter]);
+  }, [mouseX, mouseY]);
+
+  if (!enabled) return null;
 
   return (
-    <>
-      <motion.div
-        ref={cursorRef}
-        className="fixed pointer-events-none z-[9999] w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full -translate-x-1/2 -translate-y-1/2"
-        style={{ boxShadow: "0 0 8px rgba(99,102,241,0.6)" }}
-      />
-      <motion.div
-        ref={cursorRingRef}
-        className="fixed pointer-events-none z-[9998] w-8 h-8 border border-slate-400/50 rounded-full -translate-x-1/2 -translate-y-1/2"
-        style={{ left: ringX, top: ringY, transition: "width 0.2s, height 0.2s, border-color 0.2s, background-color 0.2s" }}
-      />
-    </>
+    <AnimatePresence>
+      {!hidden && (
+        <>
+          {/* Core dot */}
+          <motion.div
+            key="cursor-dot"
+            className="fixed top-0 left-0 pointer-events-none z-[99990]"
+            style={{ x: mouseX, y: mouseY }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="rounded-full bg-white"
+              animate={{
+                width: hovering ? 10 : 7,
+                height: hovering ? 10 : 7,
+                scale: pressed ? 0.7 : 1,
+              }}
+              transition={{ duration: 0.15 }}
+              style={{
+                translateX: "-50%",
+                translateY: "-50%",
+                boxShadow: "0 0 12px rgba(129,140,248,0.9)",
+              }}
+            />
+          </motion.div>
+
+          {/* Trailing ring */}
+          <motion.div
+            key="cursor-ring"
+            className="fixed top-0 left-0 pointer-events-none z-[99989]"
+            style={{ x: ringX, y: ringY }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="rounded-full border"
+              animate={{
+                width: hovering ? 52 : 34,
+                height: hovering ? 52 : 34,
+                scale: pressed ? 0.85 : 1,
+                borderColor: hovering
+                  ? "rgba(129,140,248,0.9)"
+                  : "rgba(148,163,184,0.55)",
+                backgroundColor: hovering
+                  ? "rgba(99,102,241,0.12)"
+                  : "rgba(99,102,241,0)",
+              }}
+              transition={{ duration: 0.2 }}
+              style={{ translateX: "-50%", translateY: "-50%" }}
+            />
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }

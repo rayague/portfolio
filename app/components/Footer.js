@@ -8,59 +8,46 @@ import {
   faInstagram,
   faLinkedin,
   faWhatsapp,
-  faGithub
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-
-const socialVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  hover: { scale: 1.1, y: -5, transition: { duration: 0.2 } },
-};
+import { siteConfig } from "@/data/site-config";
 
 const socials = [
-  { href: "https://www.facebook.com/profile.php?id=100084755843013", icon: faFacebook, color: "from-blue-600 to-blue-700" },
-  { href: "https://www.instagram.com/rayague03", icon: faInstagram, color: "from-pink-600 to-purple-700" },
-  { href: "https://www.linkedin.com/in/ray-ague-2066b4247", icon: faLinkedin, color: "from-blue-700 to-blue-800" },
-  { href: "https://wa.me/33758279907", icon: faWhatsapp, color: "from-green-600 to-green-700" },
-  { href: "https://github.com/rayague", icon: faGithub, color: "from-slate-700 to-slate-800" },
+  { href: siteConfig.social.github, icon: faGithub, label: "GitHub" },
+  { href: siteConfig.social.linkedin, icon: faLinkedin, label: "LinkedIn" },
+  { href: siteConfig.social.whatsapp, icon: faWhatsapp, label: "WhatsApp" },
+  { href: siteConfig.social.instagram, icon: faInstagram, label: "Instagram" },
+  { href: siteConfig.social.facebook, icon: faFacebook, label: "Facebook" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-auto relative z-10">
-      <motion.div
-        className="flex flex-row items-center justify-center w-full gap-4 p-4 sm:p-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        {socials.map((s) => (
-          <motion.div key={s.href} variants={socialVariants} whileHover="hover">
-            <Link
+    <footer className="w-full mt-auto relative z-10 border-t border-white/[0.05]">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <Link href="/" className="font-display text-xl font-bold gradient-text">
+          Ray AGUE
+        </Link>
+
+        <div className="flex items-center gap-3">
+          {socials.map((s) => (
+            <motion.a
+              key={s.label}
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${s.color} rounded-full hover:from-inherit hover:to-inherit transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center`}
+              aria-label={s.label}
+              whileHover={{ y: -4, scale: 1.08 }}
+              className="flex items-center justify-center w-10 h-10 glass-card rounded-full text-slate-400 hover:text-white hover:border-indigo-500/40 transition-colors duration-300"
             >
-              <FontAwesomeIcon className="text-white text-sm sm:text-lg" icon={s.icon} />
-            </Link>
-          </motion.div>
-        ))}
-      </motion.div>
+              <FontAwesomeIcon className="text-sm" icon={s.icon} />
+            </motion.a>
+          ))}
+        </div>
 
-      <motion.div
-        className="w-full px-4 py-4 sm:py-6 border-t border-slate-800/50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <p className="text-xs sm:text-sm text-center text-slate-400">
-          &copy; copyright -{" "}
-          <Link href="/" className="hover:text-slate-300 transition-colors duration-300">
-            Ray AGUE
-          </Link> All rights reserved.
+        <p className="text-xs sm:text-sm text-slate-500 text-center">
+          &copy; {new Date().getFullYear()} Ray AGUE. All rights reserved.
         </p>
-      </motion.div>
+      </div>
     </footer>
   );
 };
